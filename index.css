@@ -1673,4 +1673,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
+.share-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-secondary) !important;
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.25) !important;
+}
+
 
