@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solid Waste Topic 4 - Exhaustive <span class="hl-amber">6-Day</span> Revision Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient-bg" id="bubble-container"></div>
+  <div class="app-container">
+    <aside class="sidebar" id="dashboard-sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-drop-fill"></i></div>
+        <div>
+          <h2>Revision Hub</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Building Services</span>
+          <div class="badge-ronny" style="color: var(--color-primary) !important;">systems by ronny</div>
+        </div>
+      </div>
+                                    <div class="sidebar-header-right">
+<div class="topic-dropdown-container">
+        <button class="topic-dropdown-btn" id="topic-dropdown-btn">
+          <span>T4: Solid Waste</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="topic-dropdown-menu" id="topic-dropdown-menu">
+          <a href="index.html" class="topic-dropdown-item"><i class="ri-drop-line"></i> T1: Plumbing</a>
+          <a href="topic2.html" class="topic-dropdown-item"><i class="ri-article-line"></i> T2: Sanitary</a>
+          <a href="topic3.html" class="topic-dropdown-item"><i class="ri-water-flash-line"></i> T3: Drainage</a>
+          <a href="topic4.html" class="topic-dropdown-item active"><i class="ri-recycle-line"></i> T4: Solid Waste</a>
+          <a href="topic5.html" class="topic-dropdown-item"><i class="ri-fire-line"></i> T5: Fire Protection</a>
+          <a href="topic6.html" class="topic-dropdown-item"><i class="ri-arrow-up-down-line"></i> T6: Mechanical Trans.</a>
+          <a href="topic7.html" class="topic-dropdown-item"><i class="ri-windy-line"></i> T7: Ventilation</a>
+          <a href="topic8.html" class="topic-dropdown-item"><i class="ri-snowflake-line"></i> T8: Air-Conditioning</a>
+        </div>
+      </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="ri-moon-line moon-icon"></i>
+          <i class="ri-sun-line sun-icon"></i>
+        </button>
+      </div>
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Overall Revision</span>
+          <span class="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="sidebar-progress-bar"></div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="ri-medal-line" style="color: var(--color-accent-warm); font-size: 1.1rem;"></i>
+          <span id="overall-badge-title" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main);">Junior Apprentice</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem;">
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-calendar-check-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="days-completed-count" style="font-size: 0.9rem; line-height: 1.1;">0</span>
+            <span class="label" style="font-size: 0.65rem;">Days Studied</span>
+          </div>
+        </div>
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-line-chart-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="avg-quiz-score" style="font-size: 0.9rem; line-height: 1.1;">0%</span>
+            <span class="label" style="font-size: 0.65rem;">Avg Quiz Score</span>
+          </div>
+        </div>
+      </div>
+      <nav style="flex-grow: 1; overflow-y: auto;">
+        <h3 style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 0.75rem;">Study Plan</h3>
+        <ul class="nav-menu">
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="1" id="nav-day-1"><i class="ri-bookmark-3-line"></i> Day 1: Classifications</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="2" id="nav-day-2"><i class="ri-settings-line"></i> Day 2: SWM Systems</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="3" id="nav-day-3"><i class="ri-fire-line"></i> Day 3: Incinerators</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="4" id="nav-day-4"><i class="ri-scales-3-line"></i> Day 4: Pros & Cons</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="5" id="nav-day-5"><i class="ri-arrow-down-circle-line"></i> Day 5: Refuse Chutes</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="6" id="nav-day-6"><i class="ri-earth-line"></i> Day 6: Garchey & Landfills</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <span>BQS III-II Revision App</span>
+        <span>Developer Pair: <a href="#">Antigravity</a></span>
+        <span style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="ri-whatsapp-line" style="color: var(--color-primary); font-size: 0.95rem;"></i>
+          <a href="https://wa.me/254745806488" target="_blank" class="footer-ronny">systems by ronny</a>
+        </span>
+      </div>
+    </aside>
+    <main class="main-dashboard" id="dashboard-main">
+      <section class="hero-banner" id="hero-banner-section">
+        <div class="hero-content">
+          <div style="display: inline-block; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--border-active); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem; text-transform: uppercase;">
+            Topic 4: Solid Waste Management
+          </div>
+          <h1>Mastering Solid Waste</h1>
+          <p>An interactive <span class="hl-amber">6-day</span> study experience covering waste classifications, incinerators, refuse chutes, Garchey systems, and sanitary landfills. Every detail perfectly extracted for your exams.</p>
+          <div class="stats-grid-row">
+            <div class="stat-pill"><i class="ri-file-text-line"></i><div><span class="num">22</span><span class="label">Pages Covered</span></div></div>
+            <div class="stat-pill"><i class="ri-checkbox-multiple-line"></i><div><span class="num">30</span><span class="label">Quiz Qs</span></div></div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="images/water_tank_schema.png" alt="Waste Management" id="hero-graphic-image">
+        </div>
+      </section>
+      <section class="day-tab-container">
+        <div class="day-tabs">
+          <button class="day-tab" data-day="1" id="tab-day-1"><span class="day-num">Day 1</span><span class="day-title">Classes</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="2" id="tab-day-2"><span class="day-num">Day 2</span><span class="day-title">SWM Sys</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="3" id="tab-day-3"><span class="day-num">Day 3</span><span class="day-title">Incinerator</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="4" id="tab-day-4"><span class="day-num">Day 4</span><span class="day-title">Pros/Cons</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="5" id="tab-day-5"><span class="day-num">Day 5</span><span class="day-title">Chutes</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="6" id="tab-day-6"><span class="day-num">Day 6</span><span class="day-title">Landfills</span><div class="status-dot"></div></button>
+        </div>
+      </section>
+      <div class="revision-layout">
+        <div class="study-guide">
+
+          <div class="day-panel" id="day-panel-1">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-bookmark-3-fill"></i></div><h3>Day 1: Solid Waste Classifications</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. What is Solid Waste?</h4>
+                <p>Waste (rubbish, trash, refuse, garbage, junk, litter) is unwanted or useless materials. Solid waste disposal refers to all techniques used for the collection, treatment, and disposal of a community's solid waste. The Sustainable Waste Management Act (2022) provides the legal framework, emphasizing the <strong>5Rs</strong> (Reduce, Reuse, Recycle, Repair, Refurbish).</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Source-Based Classification</h4>
+                <ul>
+                  <li><strong>Residential:</strong> Dwellings, apartments (leftover food, vegetable peels, plastics, clothes).</li>
+                  <li><strong>Commercial:</strong> Stores, restaurants, markets, hotels, auto-repair shops, medical facilities.</li>
+                  <li><strong>Institutional:</strong> Schools, colleges, offices, prisons (mainly paper, plastic, glasses).</li>
+                  <li><strong>Municipal:</strong> Dust, leafy matter, building debris, street cleaning, landscaping.</li>
+                  <li><strong>Industrial:</strong> Process wastes, ashes, demolition, hazardous wastes.</li>
+                  <li><strong>Agricultural:</strong> Spoiled food grains, vegetables, agricultural remains from fields/farms.</li>
+                  <li><strong>Open areas:</strong> Streets, alleys, parks, vacant lots, beaches.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Type-Based Classification</h4>
+                <ul>
+                  <li><strong>Garbage:</strong> Putrescible (rotting) animal and vegetable wastes from food. Obnoxious odor, attracts rats.</li>
+                  <li><strong>Ashes and residues:</strong> Remaining from burning wood/coal. Mostly inorganic, valuable in landfills.</li>
+                  <li><strong>Combustible vs. Non-combustible:</strong> Combustible = paper, cardboard, textile, rubber. Non-combustible = glass, crockery, tin, aluminum, dirt.</li>
+                  <li><strong>Bulky wastes:</strong> Refrigerators, washing machines, furniture, tires, trees. Require special collection.</li>
+                  <li><strong>Street wastes:</strong> Paper, dirt, leaves collected from walkways and alleys.</li>
+                  <li><strong>Biodegradable vs. Non-biodegradable:</strong> Degraded by micro-organisms vs inorganic/recyclable materials.</li>
+                  <li><strong>Construction and demolition wastes:</strong> Earth, stones, concrete, bricks, lumber, plumbing.</li>
+                  <li><strong>Hazardous wastes:</strong> Dangerous due to ignitability, corrosivity, reactivity, toxicity (e.g., solvents, paints, pesticides, pathological wastes from hospitals).</li>
+                  <li><strong>Sewage wastes:</strong> Solid by-products of sewage treatment (organic sludge).</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-1" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-1" style="font-weight: 600; cursor: pointer;">Mark Day 1 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-2">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-settings-fill"></i></div><h3>Day 2: Solid Waste Management (SWM) System</h3></div>
+
+              <div class="concept-point">
+                <h4>1. What is an SWM System?</h4>
+                <p>A combination of functional elements facilitating the collection and disposal of solid wastes at minimal costs, preserving public health, and ensuring minimal environmental impact.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. The Functional Elements of SWM</h4>
+                <ol>
+                  <li><strong>Waste generation:</strong> Wastes are generated at the start of any process and at every stage as raw materials become goods. The key here is <em>identification of waste</em>.</li>
+                  <li><strong>Waste storage:</strong> Collection never takes place precisely at generation time. Heterogeneous wastes in residential areas must be removed within <strong><span class="hl-amber">8 days</span></strong> due to storage shortage and biodegradable rotting. Options: plastic bins, dustbins, used oil drums, sacks, skips. Problem in Kenya: irregular collection leads to overflow.</li>
+                  <li><strong>Waste collection:</strong> Gathering wastes and hauling them to a transfer station, processing plant, or disposal site. Depends on containers, frequency, and management arrangements.</li>
+                  <li><strong>Transfer and transport:</strong> Transferring wastes from smaller collection vehicles to larger ones. Subsequent transport over long distances to disposal sites (e.g., trucks transporting to Dandora Dumpsite).</li>
+                  <li><strong>Processing:</strong> Altering physical and chemical characteristics for energy recovery and recycling. Includes compaction, thermal volume reduction, incineration, composting.</li>
+                  <li><strong>Recovery and recycling:</strong> Separation of valuable resources, size reduction, density separation (air classifiers, magnets for iron, screens for glass).</li>
+                  <li><strong>Waste disposal:</strong> The ultimate fate of solid wastes (landfills). Land use planning is the primary determinant. Modern sanitary landfills confine wastes to the smallest area and cover them daily.</li>
+                </ol>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-2" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-2" style="font-weight: 600; cursor: pointer;">Mark Day 2 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-3">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-fire-fill"></i></div><h3>Day 3: Refuse Disposal & Incinerators</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Refuse Disposal Systems</h4>
+                <p>Methods include: Open burning, Dumping into the sea, Sanitary Landfills, Incineration, Composting, Ploughing in fields, Grinding into sewers, Salvaging, Garchey system.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Incinerators & Their Parts</h4>
+                <p>Incineration is the combustion of organic substances in waste, converting it into ash, flue gas, and heat. It requires negative pressure to prevent smoke misdirection.</p>
+                <ul>
+                  <li><strong>Primary Chamber:</strong> Where waste is initially loaded and burned at high temperatures.</li>
+                  <li><strong>Secondary Chamber:</strong> Breaks down remaining pollutants and gases from primary combustion.</li>
+                  <li><strong>Flue Gas Stack (Chimney):</strong> Releases emissions safely into the atmosphere.</li>
+                  <li><strong>Control Systems:</strong> Monitor and regulate the process.</li>
+                  <li><strong>Air Pollution Control Devices:</strong> Scrubbers, filters, electrostatic precipitators remove pollutants.</li>
+                  <li><strong>Ash Handling System:</strong> Collects and disposes of ash residue.</li>
+                  <li><strong>Heat Recovery System:</strong> Captures heat to produce steam or heat buildings.</li>
+                </ul>
+                <p><em>Principle:</em> A primary burner receives diesel oil to ignite, then receives sludge oil. Atomizing air facilitates combustion. Gases burn out in the secondary chamber.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Types of Incinerators</h4>
+                <ul>
+                  <li><strong>Rotary Kiln:</strong> Slanted primary chamber that rotates. Waste is kept circulating continually. Good for pharmaceutical, medical, and hazardous wastes.</li>
+                  <li><strong>Fluidized Bed:</strong> Air is injected through nozzles into a bed of granular material (limestone/silica sand) keeping it violently agitated (fluid-like). Thermal efficiency up to 90%. Good for liquid waste/sewage sludge.</li>
+                  <li><strong>Moving Grate:</strong> Waste is burned in layers on a moving grate. Ash falls into a water trap as slag (10-25% of weight). Expensive but handles large units.</li>
+                  <li><strong>Waste-Gas Flare:</strong> Burns excess gases in oil/gas extraction or landfills. Produces greenhouse gases, heat, and noise.</li>
+                  <li><strong>Multiple Hearth:</strong> Row of circular hearths. Material moved by rotating rabble arms. 1400-1800°F.</li>
+                  <li><strong>Catalytic:</strong> Uses a catalyst to accelerate oxidation and limit NOx emissions at low temps.</li>
+                  <li><strong>Liquid Injection:</strong> Uses high pressure to split liquid wastes into tiny droplets for rapid burning (1200-3000°F).</li>
+                  <li><strong>Fixed Grate / Direct-Flame:</strong> Used when waste gas contains particles. Runs between 1000 and 1500°F.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-3" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-3" style="font-weight: 600; cursor: pointer;">Mark Day 3 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-4">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-scales-3-fill"></i></div><h3>Day 4: Pros & Cons of Incinerators</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Applications of Incinerators</h4>
+                <ul>
+                  <li><strong>Medical waste:</strong> From labs/hospitals. Destroy and neutralize health risks.</li>
+                  <li><strong>Animal waste:</strong> Carcasses and by-products to prevent spread of infection/viruses.</li>
+                  <li><strong>General waste:</strong> From mining/military operations.</li>
+                  <li><strong>Nanomaterial wastes:</strong> From consumer products and nanotechnology research.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Merits of Incinerators</h4>
+                <ul>
+                  <li>Reduces the total amount of garbage by up to <strong>95%</strong> and the solid portion by <strong>80-85%</strong>.</li>
+                  <li>Disposes of difficult-to-recycle waste (unlike landfills which only break down organics).</li>
+                  <li><strong>Waste-to-Energy:</strong> Converts waste into heat or power (electricity).</li>
+                  <li>Requires less space than landfills and can be located closer to cities, reducing transport drives.</li>
+                  <li>Generates less unpleasant odor than landfills (no open-air rotting).</li>
+                  <li>Does not emit methane (unlike landfills).</li>
+                  <li>Extremely high temperatures kill hazardous bacteria, pathogens, and toxins.</li>
+                  <li>Not restricted by variations in the weather.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Demerits of Incinerators</h4>
+                <ul>
+                  <li>Can produce air pollution: nitrogen oxides (NOx), sulfur oxides, and particulate matter.</li>
+                  <li>Produces bottom ash and fly ash, which may contain harmful metals.</li>
+                  <li>Not a sustainable solution (does not conserve resources).</li>
+                  <li>Construction requires expensive infrastructure and equipment. Expensive to operate.</li>
+                  <li>Long-term negative health effects on surrounding communities (cancer, birth defects) due to low exposures to metals/pollutants.</li>
+                  <li>Requires highly experienced and expensive labor to administer.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-4" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-4" style="font-weight: 600; cursor: pointer;">Mark Day 4 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-5">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-arrow-down-circle-fill"></i></div><h3>Day 5: Refuse Chutes</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. What is a Refuse Chute?</h4>
+                <p>An inclined channel or vertical pipe system passing from floor to floor, allowing refuse to be dropped from each floor down to a central refuse room on the ground floor/basement. The most common type is the dry-garbage chute. The chute shaft should be <span class="hl-amber">400mm</span> in diameter, made from asbestos/cement pipes, and strictly vertical.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Parts of a Refuse Chute</h4>
+                <ul>
+                  <li><strong>Chutes:</strong> The vertical pipe. Should be smooth internal finish, stainless steel or concrete.</li>
+                  <li><strong>Vent:</strong> Installed at roof level to remove foul smell and gases.</li>
+                  <li><strong>Inlet Hopper:</strong> The receptacle fitting/hatch on each floor for receiving refuse.</li>
+                  <li><strong>Collection Chamber:</strong> Compartment at the lower end. Must have drainage via a <span class="hl-amber">100mm</span> trap to the sewer, shutters to prevent rats, and 1-hour fire resistance.</li>
+                </ul>
+                <p>The collection chamber should be at least 2.<span class="hl-amber">5m</span> high, 1.<span class="hl-amber">5m</span> wide, 2.<span class="hl-amber">5m</span> long, and accessible by a refuse vehicle (within <span class="hl-amber">25m</span>). The chute should be sited away from habitable rooms, but max <span class="hl-amber">30m</span> horizontal distance from any dwelling.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Types of Chutes</h4>
+                <ul>
+                  <li><strong>Vertical:</strong> Straight down. Most common in high-rises.</li>
+                  <li><strong>Angled / Curved:</strong> When vertical installation isn't feasible due to space/obstacles.</li>
+                  <li><strong>Recycling:</strong> Segregates different types of recyclable materials.</li>
+                  <li><strong>Compactor:</strong> Integrated with compactors to compress waste, saving space.</li>
+                  <li><strong>Odour-Control:</strong> Equipped with seals, filters, deodorizers.</li>
+                  <li><strong>Fire-Rated:</strong> Built with fire-resistant doors/closures to stop flames spreading.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Advantages & Disadvantages</h4>
+                <p><strong>Pros:</strong> Convenience (no carrying bags down stairs), space efficiency, improved hygiene (enclosed), safety (avoids accidents carrying heavy bags on stairs), aesthetics.</p>
+                <p><strong>Cons:</strong> Odour accumulation if poorly maintained, blockages, cross-contamination of recyclables, fire hazards from combustibles, and limited capacity during peak usage.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-5" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-5" style="font-weight: 600; cursor: pointer;">Mark Day 5 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-6">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-earth-fill"></i></div><h3>Day 6: Garchey System & Landfills</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. The Garchey System</h4>
+                <p>Refuse (potato peelings, small bottles, ashes) is collected in a unit <em>below the kitchen sink</em> in each flat. A bowl retains normal waste water. Refuse is placed in a central tube. When raised, the waste water and refuse are carried down a stack to a chamber at the base of the building.</p>
+                <p>A specially equipped tanker collects it weekly, compacting it into a damp, semi-solid mass. One tanker serves 200 dwellings. Waste water from the tanker is discharged to a foul sewer.</p>
+                <p><strong>Merits:</strong> High hygiene (sealed system controls vermin and odour), infrastructure doubles for wastewater, very convenient.</p>
+                <p><strong>Demerits:</strong> The evacuation tank takes up a whole kitchen cabinet, prone to blockages/back-flow, hard to separate for recycling, expensive maintenance, high water usage, unsuitable for bulky/dry waste.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Sanitary Landfills</h4>
+                <p>Waste is placed in a large excavation (pit/trench) and backfilled with excavated soil daily. Ideally, <strong>0.<span class="hl-amber">5m</span> of soil</strong> should cover the deposited refuse at the end of the day to prevent animals digging and flies breeding.</p>
+                <p>Key establishment factors:</p>
+                <ul>
+                  <li><strong>Siting:</strong> The most difficult stage. Requires Environmental Impact Assessment and community involvement.</li>
+                  <li><strong>Design:</strong> Needs impermeable lining, gas monitoring, fencing, and post-closure maintenance.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Constructing Landfills</h4>
+                <p>The basic element is the <strong>refuse cell</strong> (compacted in thin layers up to <span class="hl-amber">3 meters</span> deep). The compacted refuse occupies one-quarter of its loose volume. Several adjacent cells make up a <strong>lift</strong>. Lifts are stacked on top of each other. The final cap may have topsoil for vegetation. Crawler tractors spread and compact the soil.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Advantages & Disadvantages of Landfills</h4>
+                <p><strong>Advantages:</strong> Convenience, cost-effectiveness (cheaper than incineration), sanitation (centralized), Energy production (landfill gas can generate electricity), and Land reclamation (can become parks when capped).</p>
+                <p><strong>Disadvantages:</strong> Environmental impact (leachate contaminates groundwater, methane gas), Limited lifespan (fills up, hard to find new sites), Not sustainable (buries recyclables), Health risks (pollution, vectors), Aesthetic concerns (ugly, displacement).</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-6" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-6" style="font-weight: 600; cursor: pointer;">Mark Day 6 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <aside class="revision-suite">
+          <!-- Flashcards -->
+          <div class="suite-card" id="flashcard-widget-card">
+            <h3><i class="ri-article-line"></i> Revision Flashcards</h3>
+            <div class="flashcard-arena" id="revision-flashcard-arena">
+              <div class="flashcard-inner">
+                <div class="flashcard-front">
+                  <span class="flashcard-card-title" id="flashcard-card-title-text">Tap to Reveal</span>
+                  <p class="flashcard-text" id="flashcard-front-content">Flashcard Front</p>
+                </div>
+                <div class="flashcard-back">
+                  <span class="flashcard-card-title">Concept Definition</span>
+                  <p class="flashcard-text" id="flashcard-back-content" style="font-size: 0.85rem; font-weight: 400;">Flashcard Back</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-space" style="margin-bottom: 1rem;">
+              <span id="flashcard-position-indicator" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">1 / 4</span>
+              <button id="flashcard-shuffle-btn" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                <i class="ri-shuffle-line"></i> Shuffle
+              </button>
+            </div>
+            <div class="flashcard-controls">
+              <button class="btn" id="flashcard-prev-btn"><i class="ri-arrow-left-s-line"></i> Prev</button>
+              <button class="btn btn-accent" id="flashcard-next-btn">Next <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+
+          <!-- Quiz -->
+          <div class="suite-card" id="quiz-widget-card">
+            <h3 id="quiz-day-title"><i class="ri-questionnaire-line"></i> Day 1 Revision Quiz</h3>
+            <div class="quiz-container" id="quiz-body-area"></div>
+          </div>
+          
+          <!-- Sandbox -->
+          <div class="suite-card" id="calculator-widget-card">
+            <h3><i class="ri-calculator-line"></i> Slope Calculator</h3>
+            <div class="calc-container">
+              <div class="calc-tabs">
+                <button class="calc-tab-btn active" id="calc-tab-fall">Pipe Fall</button>
+                <button class="calc-tab-btn" id="calc-tab-gradient">Gradient</button>
+              </div>
+              <div id="calc-form-head" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-height">Distance / Length (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-height" class="calc-input" value="10" min="0" step="0.5">
+                    <span class="calc-unit">meters</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-density">Gradient (1 in X)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-density" class="calc-input" value="40" min="10">
+                    <span class="calc-unit">X</span>
+                  </div>
+                </div>
+              </div>
+              <div id="calc-form-flow" style="display: none; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-q">Length (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-q" class="calc-input" value="15" min="0.1" step="0.1">
+                    <span class="calc-unit">m</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-velocity">Fall (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-velocity" class="calc-input" value="0.25" min="0.01" step="0.01">
+                    <span class="calc-unit">m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-output-card">
+                <div class="calc-result-label">Calculated Output</div>
+                <div class="calc-result-value" id="calc-result-val">0.<span class="hl-amber">25 m</span></div>
+                <div class="calc-result-sub" id="calc-result-sub">
+                  Equivalent to <strong><span class="hl-amber">250 mm</span></strong> fall.<br>
+                  Fall = Length / Gradient.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <style>
+    .topic-link { display: block; width: 100%; text-align: center; padding: 0.5rem; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.3s; border: 1px solid var(--border-glass); }
+    .active-topic { background: var(--color-primary); color: white; border: none; }
+    .topic-link:not(.active-topic):not(.disabled-topic) { background: var(--bg-tertiary); color: var(--text-main); }
+    .disabled-topic { background: var(--bg-secondary); color: var(--text-muted); opacity: 0.6; cursor: not-allowed; }
+  </style>
+  <script src="topic4.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

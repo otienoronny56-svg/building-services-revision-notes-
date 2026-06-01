@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drainage Topic 3 - Exhaustive <span class="hl-amber">6-Day</span> Revision Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient-bg" id="bubble-container"></div>
+  <div class="app-container">
+    <aside class="sidebar" id="dashboard-sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-drop-fill"></i></div>
+        <div>
+          <h2>Revision Hub</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Building Services</span>
+          <div class="badge-ronny" style="color: var(--color-primary) !important;">systems by ronny</div>
+        </div>
+      </div>
+                                          <div class="sidebar-header-right">
+<div class="topic-dropdown-container">
+        <button class="topic-dropdown-btn" id="topic-dropdown-btn">
+          <span>T3: Drainage</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="topic-dropdown-menu" id="topic-dropdown-menu">
+          <a href="index.html" class="topic-dropdown-item"><i class="ri-drop-line"></i> T1: Plumbing</a>
+          <a href="topic2.html" class="topic-dropdown-item"><i class="ri-article-line"></i> T2: Sanitary</a>
+          <a href="topic3.html" class="topic-dropdown-item active"><i class="ri-water-flash-line"></i> T3: Drainage</a>
+          <a href="topic4.html" class="topic-dropdown-item"><i class="ri-recycle-line"></i> T4: Solid Waste</a>
+          <a href="topic5.html" class="topic-dropdown-item"><i class="ri-fire-line"></i> T5: Fire Protection</a>
+          <a href="topic6.html" class="topic-dropdown-item"><i class="ri-arrow-up-down-line"></i> T6: Mechanical Trans.</a>
+          <a href="topic7.html" class="topic-dropdown-item"><i class="ri-windy-line"></i> T7: Ventilation</a>
+          <a href="topic8.html" class="topic-dropdown-item"><i class="ri-snowflake-line"></i> T8: Air-Conditioning</a>
+        </div>
+      </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="ri-moon-line moon-icon"></i>
+          <i class="ri-sun-line sun-icon"></i>
+        </button>
+      </div>
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Overall Revision</span>
+          <span class="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="sidebar-progress-bar"></div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="ri-medal-line" style="color: var(--color-accent-warm); font-size: 1.1rem;"></i>
+          <span id="overall-badge-title" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main);">Junior Apprentice</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem;">
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-calendar-check-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="days-completed-count" style="font-size: 0.9rem; line-height: 1.1;">0</span>
+            <span class="label" style="font-size: 0.65rem;">Days Studied</span>
+          </div>
+        </div>
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-line-chart-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="avg-quiz-score" style="font-size: 0.9rem; line-height: 1.1;">0%</span>
+            <span class="label" style="font-size: 0.65rem;">Avg Quiz Score</span>
+          </div>
+        </div>
+      </div>
+      <nav style="flex-grow: 1; overflow-y: auto;">
+        <h3 style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 0.75rem;">Study Plan</h3>
+        <ul class="nav-menu">
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="1" id="nav-day-1"><i class="ri-bookmark-3-line"></i> Day 1: Water Types</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="2" id="nav-day-2"><i class="ri-bubble-chart-line"></i> Day 2: Principles & Systems</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="3" id="nav-day-3"><i class="ri-arrow-down-line"></i> Day 3: Subsoil Drainage</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="4" id="nav-day-4"><i class="ri-eye-line"></i> Day 4: Access points</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="5" id="nav-day-5"><i class="ri-test-tube-line"></i> Day 5: Testing</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="6" id="nav-day-6"><i class="ri-plant-line"></i> Day 6: Waste Mgt</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <span>BQS III-II Revision App</span>
+        <span>Developer Pair: <a href="#">Antigravity</a></span>
+        <span style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="ri-whatsapp-line" style="color: var(--color-primary); font-size: 0.95rem;"></i>
+          <a href="https://wa.me/254745806488" target="_blank" class="footer-ronny">systems by ronny</a>
+        </span>
+      </div>
+    </aside>
+    <main class="main-dashboard" id="dashboard-main">
+      <section class="hero-banner" id="hero-banner-section">
+        <div class="hero-content">
+          <div style="display: inline-block; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border-active); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; text-transform: uppercase;">
+            Topic 3: <span class="hl-blue">Drainage Systems</span>
+          </div>
+          <h1>Mastering Drainage</h1>
+          <p>An interactive <span class="hl-amber">6-day</span> study experience covering drainage principles, testing, manholes, and waste management. Every detail from the 26-page Topic 3 manual is included here perfectly and simply for your exams.</p>
+          <div class="stats-grid-row">
+            <div class="stat-pill"><i class="ri-file-text-line"></i><div><span class="num">26</span><span class="label">Pages Covered</span></div></div>
+            <div class="stat-pill"><i class="ri-checkbox-multiple-line"></i><div><span class="num">30</span><span class="label">Quiz Qs</span></div></div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="images/water_filtration_diagram.png" alt="Drainage Engineering Design" id="hero-graphic-image">
+        </div>
+      </section>
+      <section class="day-tab-container">
+        <div class="day-tabs">
+          <button class="day-tab" data-day="1" id="tab-day-1"><span class="day-num">Day 1</span><span class="day-title">Types</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="2" id="tab-day-2"><span class="day-num">Day 2</span><span class="day-title">Systems</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="3" id="tab-day-3"><span class="day-num">Day 3</span><span class="day-title">Subsoil</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="4" id="tab-day-4"><span class="day-num">Day 4</span><span class="day-title">Access</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="5" id="tab-day-5"><span class="day-num">Day 5</span><span class="day-title">Testing</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="6" id="tab-day-6"><span class="day-num">Day 6</span><span class="day-title">Management</span><div class="status-dot"></div></button>
+        </div>
+      </section>
+      <div class="revision-layout">
+        <div class="study-guide">
+
+          <div class="day-panel" id="day-panel-1">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-bookmark-3-fill"></i></div><h3>Day 1: Terminology & Wastewater Types</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. What is Drainage?</h4>
+                <p>Drainage is the system of pipes and channels that remove wastewater, sewage, and rainwater from a building and transport it to disposal or treatment systems. It operates primarily through gravity using angled pipes.</p>
+                <p><strong>Common issues include:</strong> Slow/blocked drains (caused by grease, fat, roots), improper grading (slope directs water toward property), and overflowing gutters.</p>
+                <p><strong>Key terminology:</strong></p>
+                <ul>
+                  <li><strong>Invert level:</strong> The depth to the bottom of a drain pipe measured from the datum.</li>
+                  <li><strong>Gully:</strong> A fitting on the drain that takes waste pipes from baths and basins but <em>not</em> Water Closets.</li>
+                  <li><strong>Public Sewer:</strong> The large pipe laid below public land carrying waste to treatment works.</li>
+                  <li><strong>Surface water drainage:</strong> Water from roof/paved areas after rain. Considered clean, doesn't need sewage treatment.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. The Three Types of Wastewater</h4>
+                <p>In building services, wastewater is divided into three main categories:</p>
+                <ol>
+                  <li><strong>Black Water (Soil Water):</strong> Contains human waste and pathogens (from WCs, urinals, bidets). Has high bacteria levels, organic matter, strong odors. Must be transported to municipal sewers, septic tanks, or biodigesters for proper treatment.</li>
+                  <li><strong>Grey Water:</strong> Does <em>not</em> contain human waste, but contains soap, grease, and food particles (from sinks, showers, baths). Contains less harmful bacteria but is still not safe for drinking. It can be recycled for landscape irrigation and toilet flushing in sustainable buildings.</li>
+                  <li><strong>Storm Water (Rainwater Runoff):</strong> Collects on roofs, balconies, driveways, and pavements. It is carried away by gutters, downpipes, surface drains, and catch basins.</li>
+                </ol>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Uses of Storm Water in Building Services</h4>
+                <p>Storm water drainage prevents flooding, structural damage, soil erosion, and water stagnation. Once collected, storm water can be used for several <strong>non-potable</strong> purposes:</p>
+                <ul>
+                  <li><strong>Landscape Irrigation:</strong> <span class="hl-green">Soft water</span> (low mineral content) is beneficial for plants.</li>
+                  <li><strong>Toilet Flushing:</strong> Significant portion of indoor water consumption. Saves water bills.</li>
+                  <li><strong>Cleaning and Washing:</strong> Cars, pavements, construction equipment.</li>
+                  <li><strong>Construction Activities:</strong> Concrete curing, dust suppression, soil compaction.</li>
+                  <li><strong>Groundwater Recharge:</strong> Directed to soak pits or infiltration trenches to replenish aquifers.</li>
+                  <li><strong>Cooling Systems:</strong> Used in cooling towers and <span class="hl-blue">HVAC</span> systems.</li>
+                  <li><strong>Fire Fighting Storage:</strong> Stored in dedicated backup tanks for sprinklers and hose reels.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-1" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-1" style="font-weight: 600; cursor: pointer;">Mark Day 1 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-2">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-bubble-chart-fill"></i></div><h3>Day 2: Drainage Principles & Systems</h3></div>
+
+              <div class="concept-point">
+                <h4>1. Principles of Soil Drainage</h4>
+                <p>Since drains laid below ground are fairly inaccessible, their operations must be trouble-free. The following principles must be followed:</p>
+                <ul>
+                  <li>Ensure drains are watertight so waste does not leak and contaminate the ground.</li>
+                  <li>Clear away obstructions (like surplus mortar at joints).</li>
+                  <li>Lay drains on even gradients to make sure water carries solid matter smoothly.</li>
+                  <li>Lay drains in straight lines. If a drain changes direction, insert an inspection chamber.</li>
+                  <li>Construct manholes where several pipes join a single drain run, or at 90-meter intervals on straight lines.</li>
+                  <li>Construct a manhole at the boundary before the drain joins the public sewer.</li>
+                  <li>Use soil drains at least <span class="hl-amber">100mm</span> in diameter.</li>
+                  <li>Surround drains under buildings in at least <span class="hl-amber">150mm</span> of concrete.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. The Combined System</h4>
+                <p>Most common in historically established urban areas (Nairobi, Mombasa). A single pipe network carries both foul water (sewage) and surface water (stormwater).</p>
+                <ul>
+                  <li><strong>Advantages:</strong> Cost-effective (single infrastructure), efficient in light rain.</li>
+                  <li><strong>Challenges:</strong> Pollution risks (untreated sewage discharged into rivers during heavy rains - "Combined Sewer Overflows"), overflow risks (surcharging/backups), and it places unnecessary burden on treatment plants to treat rainwater.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. The Separate System</h4>
+                <p>The modern standard. The National Building Code mandates that stormwater shall not enter a sewer installation. This system uses separate foul water drains (leading to a sanitary sewer) and surface water drains (leading to rivers/soakaways).</p>
+                <ul>
+                  <li><strong>Found in:</strong> Newer residential estates (Syokimau, Ruiru).</li>
+                  <li><strong>Advantages:</strong> Reduced pollution of natural water bodies, and highly efficient focused treatment of wastewater.</li>
+                  <li><strong>Challenges:</strong> Infrastructure costs are higher (two separate systems).</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Surface Drainage</h4>
+                <p>Common in rural & peri-urban areas. It is the natural/artificial removal of excess water from the surface of the land. It relies on two physical principles:</p>
+                <ul>
+                  <li><strong>Gradient (Slope):</strong> Land is graded so gravity pulls water away from buildings. A common residential grade is 2% (2 units drop for every 100 units distance).</li>
+                  <li><strong>Collection Points:</strong> Structures that "catch" the moving water.</li>
+                </ul>
+                <p>Includes Open Channels (Invert Block Drains), Swales, Gutters, Catch Basins (Gully Pots), French Drains, and Channel (Trench) Drains.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-2" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-2" style="font-weight: 600; cursor: pointer;">Mark Day 2 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-3">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-arrow-down-fill"></i></div><h3>Day 3: Ground Water & Subsoil Drainage</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Subsoil Drainage</h4>
+                <p>Unlike surface drainage (which deals with water before it enters the soil), <strong>sub-surface (subsoil) drainage</strong> deals with water <em>after</em> it has soaked into the ground. It permanently lowers the natural water table.</p>
+                <p>Ideally, buildings should have foundations above the water table. If not, a subsoil <span class="hl-blue">drainage system</span> is required. Types include:</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. French Drains / Soak Pits</h4>
+                <p>Common in private compounds with no municipal sewer. They allow water to seep naturally into the ground.</p>
+                <ul>
+                  <li><strong>Structure:</strong> A trench filled with rounded gravel and a perforated pipe (PVC or HDPE) at the bottom.</li>
+                  <li><strong>The Filter Concept:</strong> In professional installations, the entire gravel bed is wrapped in a <strong>geotextile fabric</strong>. This allows water to pass but stops fine soil particles from clogging the pipe.</li>
+                  <li><strong>Application:</strong> Used around building perimeters ("footing drains") to protect basements/crawlspaces.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Mole Drains</h4>
+                <p>A unique, "pipeless" form of sub-surface drainage used in heavy clay soils (like Black Cotton soil).</p>
+                <ul>
+                  <li><strong>How they are made:</strong> A tractor pulls a "mole plow" (a vertical blade with a cylindrical bullet) about <span class="hl-amber">400mm</span>-<span class="hl-amber">600mm</span> below the surface.</li>
+                  <li><strong>Mechanism:</strong> The bullet packs the clay soil tight, forming a continuous, unlined horizontal tunnel (temporary pipe).</li>
+                  <li><strong>Lifespan:</strong> They eventually collapse or silt up, lasting 2 to 5 years before needing to be "re-malled."</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Interceptor Drains & Ground Water Pumps</h4>
+                <p><strong>Interceptor (Cut-off) Drains:</strong> Placed strategically to "intercept" groundwater moving laterally through soil, usually on a slope. If a house is on a slope, water hits the uphill foundation. The interceptor drain is placed <em>uphill</em> to catch the water and carry it around the building. They are deeper than standard drains.</p>
+                <p><strong>Ground Water Pumps:</strong> Used to drain water from aquifers to maintain/lower the water table. Pumping creates a "drawdown" of groundwater away from the pump point.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-3" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-3" style="font-weight: 600; cursor: pointer;">Mark Day 3 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-4">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-eye-fill"></i></div><h3>Day 4: Access to the Drain</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Why Do We Need Physical Access?</h4>
+                <p><span class="hl-blue">Drainage systems</span> are "out of sight, out of mind." Physical access points are strictly required for three reasons:</p>
+                <ol>
+                  <li>Inspection and Monitoring</li>
+                  <li>Maintenance and Clearing Blockages (Rodding)</li>
+                  <li>Where there is a change of Direction or Gradient</li>
+                </ol>
+                <p>Access is provided at significant changes in direction, gradient, pipe size, junctions, at the head of a drain, and on long straight runs.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Types of Access Points</h4>
+                <ul>
+                  <li><strong>Shallow Access Chambers:</strong> Small compartments (up to <span class="hl-amber">600mm</span> deep) providing drain access in both directions and possibly into a branch. An inexpensive application for shallow depths. Sometimes combined with rodding points.</li>
+                  <li><strong>Inspection Chambers:</strong> Larger than access chambers, with an open channel and space for several branches. Typically up to 1 meter deep with a removable cover. Large enough to look inside or insert tools, but <em>not</em> large enough for a person to physically enter. Built from <span class="hl-blue">uPVC</span>, concrete, or bricks.</li>
+                  <li><strong>Manholes:</strong> Large chambers with sufficient space for a person to gain access at the drain level. When invert depth exceeds <span class="hl-amber">1m</span>, <strong>step irons</strong> must be provided at <span class="hl-amber">300mm</span> vertical and horizontal spacing. A built-in ladder is used for very deep chambers.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Backdrop Manholes</h4>
+                <p>Where there is a significant difference in level (a large drop) between a drain and a private/public sewer, a <strong>backdrop manhole</strong> is used to reduce excavation costs.</p>
+                <p>Instead of sloping the drain steeply, it is laid flat and the water "drops" vertically at the manhole. For cast iron/<span class="hl-blue">uPVC</span> pipes up to <span class="hl-amber">150mm</span>, the vertical backdrop pipe may be secured inside the manhole. Otherwise, it is located outside the manhole and surrounded with concrete.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-4" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-4" style="font-weight: 600; cursor: pointer;">Mark Day 4 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-5">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-test-tube-fill"></i></div><h3>Day 5: Inspection & Testing</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Preliminary & Pre-Commissioning Checks</h4>
+                <p><strong>Preliminary:</strong> Scrutinize the system design, layout, building codes, and material adherence.</p>
+                <p><strong>Pre-Commissioning:</strong> Visual inspection of the physical condition, verifying materials match specifications, and closely inspecting access points (manholes, rodding eyes) for secure covers and effective sealing.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Leak Testing</h4>
+                <ul>
+                  <li><strong>Water Test:</strong> The system is plugged and filled with water to check for leaks. Requires a test bend and an extension pipe to produce a <strong>1.<span class="hl-amber">5 m</span> head of water</strong>. The system should stand for <strong><span class="hl-amber">2 hours</span></strong>. Maximum allowed leakage for <span class="hl-amber">100mm</span>/<span class="hl-amber">150mm</span> pipes is 0.05 and 0.<span class="hl-amber">08 litres</span> per metre run over the next 30 mins.</li>
+                  <li><strong>Air Pressure Test:</strong> Tests the system's structural integrity against designated pressures. Water seals are filled, and airbags/expandable bungs are inserted into the ends of stack pipes. Air is hand-pumped to <strong><span class="hl-amber">38 mm</span> water gauge</strong> using a U-tube manometer. The pressure must remain constant for <strong>3 minutes</strong>. Soap solution is used on joints to reveal leaks.</li>
+                  <li><strong>Smoke Test:</strong> Used for existing stacks. Smoke from a cartridge or oil generator is injected. It is less severe than the air test. Suitable warnings must be given to occupants!</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Functional Tests & Commissioning</h4>
+                <p><strong>Flow Test:</strong> Controlled flow is implemented to observe proper flow rates, identify restrictions, and ensure the system conveys wastewater without backups.</p>
+                <p><strong>Connections & Ventilation:</strong> Verify the integrity of joints. Inspect vent pipes and air admittance valves to prevent airlocks.</p>
+                <p><strong>Commissioning:</strong> Comprehensive records are compiled. The final inspection verifies compliance, officially declaring the system ready for operation and handing it over to the end user.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-5" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-5" style="font-weight: 600; cursor: pointer;">Mark Day 5 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-6">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-plant-fill"></i></div><h3>Day 6: Waste Management Systems</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Soak-Away</h4>
+                <p>A covered, porous-walled chamber that allows water to slowly percolate into the ground. It is the secondary chamber receiving effluent from a septic tank. Can be traditional (filled with large stones/hardcore) or modern (geocellular plastic crates with 95% void space). Success depends on <strong>soil permeability</strong> (requires a percolation test) and <strong>location</strong> (at least <span class="hl-amber">5m</span> from a foundation, <span class="hl-amber">3m</span> from a septic tank, and downhill from drinking water).</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Cesspool</h4>
+                <p>A completely sealed underground holding tank. <strong>It performs NO treatment of the waste.</strong> Once full, it must be vacuumed out by an exhaust tanker ("honey sucker"). Extremely expensive to maintain due to frequent emptying. Used temporarily when other options aren't viable. Sited on sloping ground, ><span class="hl-amber">7m</span> from building, <30m of vehicle access.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Septic Tanks</h4>
+                <p>Watertight chambers that receive black and grey water. Solids settle out and break down, while liquid effluent overflows into a soak-away. They require emptying every few years. They need large volumes of flushing water and permeable soil for the soak-away. Rainwater should never enter a septic tank. Must be ><span class="hl-amber">15m</span> from a water supply and ><span class="hl-amber">3m</span> from a building.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Biodigester</h4>
+                <p>A modern, enclosed, oxygen-free (anaerobic) system using specialized bacteria to actively "digest" sewage into treated water and biogas. Highly popular in Kenya (Syokimau, Ruiru) due to space efficiency (small plots) and resilience in high water tables. </p>
+                <ul>
+                  <li><strong>Products:</strong> Treated water (for irrigation), Biogas (for cooking/lighting), and Bio-slurry (organic fertilizer).</li>
+                  <li><strong>Maintenance:</strong> Rarely needs exhausting (unlike septic tanks). Odorless. Fast to install (1-<span class="hl-amber">2 days</span>).</li>
+                  <li><strong>Warnings:</strong> Harsh chemicals (bleach/acids) will kill the beneficial bacteria! Non-biodegradables (plastics) cause blockages.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-6" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-6" style="font-weight: 600; cursor: pointer;">Mark Day 6 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <aside class="revision-suite">
+          <!-- Flashcards -->
+          <div class="suite-card" id="flashcard-widget-card">
+            <h3><i class="ri-article-line"></i> Revision Flashcards</h3>
+            <div class="flashcard-arena" id="revision-flashcard-arena">
+              <div class="flashcard-inner">
+                <div class="flashcard-front">
+                  <span class="flashcard-card-title" id="flashcard-card-title-text">Tap to Reveal</span>
+                  <p class="flashcard-text" id="flashcard-front-content">Flashcard Front</p>
+                </div>
+                <div class="flashcard-back">
+                  <span class="flashcard-card-title">Concept Definition</span>
+                  <p class="flashcard-text" id="flashcard-back-content" style="font-size: 0.85rem; font-weight: 400;">Flashcard Back</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-space" style="margin-bottom: 1rem;">
+              <span id="flashcard-position-indicator" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">1 / 4</span>
+              <button id="flashcard-shuffle-btn" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                <i class="ri-shuffle-line"></i> Shuffle
+              </button>
+            </div>
+            <div class="flashcard-controls">
+              <button class="btn" id="flashcard-prev-btn"><i class="ri-arrow-left-s-line"></i> Prev</button>
+              <button class="btn btn-accent" id="flashcard-next-btn">Next <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+
+          <!-- Quiz -->
+          <div class="suite-card" id="quiz-widget-card">
+            <h3 id="quiz-day-title"><i class="ri-questionnaire-line"></i> Day 1 Revision Quiz</h3>
+            <div class="quiz-container" id="quiz-body-area"></div>
+          </div>
+          
+          <!-- Sandbox -->
+          <div class="suite-card" id="calculator-widget-card">
+            <h3><i class="ri-calculator-line"></i> Slope Calculator</h3>
+            <div class="calc-container">
+              <div class="calc-tabs">
+                <button class="calc-tab-btn active" id="calc-tab-fall">Pipe Fall</button>
+                <button class="calc-tab-btn" id="calc-tab-gradient">Gradient</button>
+              </div>
+              <div id="calc-form-head" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-height">Distance / Length (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-height" class="calc-input" value="10" min="0" step="0.5">
+                    <span class="calc-unit">meters</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-density">Gradient (1 in X)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-density" class="calc-input" value="40" min="10">
+                    <span class="calc-unit">X</span>
+                  </div>
+                </div>
+              </div>
+              <div id="calc-form-flow" style="display: none; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-q">Length (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-q" class="calc-input" value="15" min="0.1" step="0.1">
+                    <span class="calc-unit">m</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-velocity">Fall (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-velocity" class="calc-input" value="0.25" min="0.01" step="0.01">
+                    <span class="calc-unit">m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-output-card">
+                <div class="calc-result-label">Calculated Output</div>
+                <div class="calc-result-value" id="calc-result-val">0.<span class="hl-amber">25 m</span></div>
+                <div class="calc-result-sub" id="calc-result-sub">
+                  Equivalent to <strong><span class="hl-amber">250 mm</span></strong> fall.<br>
+                  Fall = Length / Gradient.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="topic3.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

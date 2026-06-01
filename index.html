@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plumbing Topic 1 - Exhaustive <span class="hl-amber">7-Day</span> Revision Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient-bg" id="bubble-container"></div>
+  <div class="app-container">
+    <aside class="sidebar" id="dashboard-sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-drop-fill"></i></div>
+        <div>
+          <h2>Revision Hub</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Building Services</span>
+          <div class="badge-ronny" style="color: var(--color-primary) !important;">systems by ronny</div>
+        </div>
+      </div>
+                                          <div class="sidebar-header-right">
+<div class="topic-dropdown-container">
+        <button class="topic-dropdown-btn" id="topic-dropdown-btn">
+          <span>T1: Plumbing</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="topic-dropdown-menu" id="topic-dropdown-menu">
+          <a href="index.html" class="topic-dropdown-item active"><i class="ri-drop-line"></i> T1: Plumbing</a>
+          <a href="topic2.html" class="topic-dropdown-item"><i class="ri-article-line"></i> T2: Sanitary</a>
+          <a href="topic3.html" class="topic-dropdown-item"><i class="ri-water-flash-line"></i> T3: Drainage</a>
+          <a href="topic4.html" class="topic-dropdown-item"><i class="ri-recycle-line"></i> T4: Solid Waste</a>
+          <a href="topic5.html" class="topic-dropdown-item"><i class="ri-fire-line"></i> T5: Fire Protection</a>
+          <a href="topic6.html" class="topic-dropdown-item"><i class="ri-arrow-up-down-line"></i> T6: Mechanical Trans.</a>
+          <a href="topic7.html" class="topic-dropdown-item"><i class="ri-windy-line"></i> T7: Ventilation</a>
+          <a href="topic8.html" class="topic-dropdown-item"><i class="ri-snowflake-line"></i> T8: Air-Conditioning</a>
+        </div>
+      </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="ri-moon-line moon-icon"></i>
+          <i class="ri-sun-line sun-icon"></i>
+        </button>
+      </div>
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Overall Revision</span>
+          <span class="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="sidebar-progress-bar"></div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="ri-medal-line" style="color: var(--color-accent-warm); font-size: 1.1rem;"></i>
+          <span id="overall-badge-title" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main);">Junior Apprentice</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem;">
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-calendar-check-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="days-completed-count" style="font-size: 0.9rem; line-height: 1.1;">0</span>
+            <span class="label" style="font-size: 0.65rem;">Days Studied</span>
+          </div>
+        </div>
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-line-chart-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="avg-quiz-score" style="font-size: 0.9rem; line-height: 1.1;">0%</span>
+            <span class="label" style="font-size: 0.65rem;">Avg Quiz Score</span>
+          </div>
+        </div>
+      </div>
+      <nav style="flex-grow: 1; overflow-y: auto;">
+        <h3 style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 0.75rem;">Study Plan</h3>
+        <ul class="nav-menu">
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="1" id="nav-day-1"><i class="ri-bookmark-3-line"></i> Day 1: Definitions</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="2" id="nav-day-2"><i class="ri-filter-2-line"></i> Day 2: Sources & Purification</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="3" id="nav-day-3"><i class="ri-flask-line"></i> Day 3: Softening & <span class="hl-green">Disinfection</span></button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="4" id="nav-day-4"><i class="ri-road-map-line"></i> Day 4: Public Supply & Mains</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="5" id="nav-day-5"><i class="ri-home-4-line"></i> Day 5: Cold Water</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="6" id="nav-day-6"><i class="ri-temp-hot-line"></i> Day 6: Hot Water</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="7" id="nav-day-7"><i class="ri-settings-4-line"></i> Day 7: Pipes & Valves</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <span>BQS III-II Revision App</span>
+        <span>Developer Pair: <a href="#">Antigravity</a></span>
+        <span style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="ri-whatsapp-line" style="color: var(--color-primary); font-size: 0.95rem;"></i>
+          <a href="https://wa.me/254745806488" target="_blank" class="footer-ronny">systems by ronny</a>
+        </span>
+      </div>
+    </aside>
+    <main class="main-dashboard" id="dashboard-main">
+      <section class="hero-banner" id="hero-banner-section">
+        <div class="hero-content">
+          <div style="display: inline-block; background: rgba(14, 165, 233, 0.1); border: 1px solid var(--border-active); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem; text-transform: uppercase;">
+            Topic 1: Plumbing & Sanitation Revision
+          </div>
+          <h1>Mastering Building Services</h1>
+          <p>An interactive, exhaustive <span class="hl-amber">7-day</span> study experience covering mechanical, electrical, and plumbing engineering concepts. Every detail from the 57-page manual is included here simply for your exams and quick revision.</p>
+          <div class="stats-grid-row">
+            <div class="stat-pill"><i class="ri-file-text-line"></i><div><span class="num">57</span><span class="label">Pages Covered</span></div></div>
+            <div class="stat-pill"><i class="ri-checkbox-multiple-line"></i><div><span class="num">70</span><span class="label">Quiz Qs</span></div></div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="images/plumbing_dashboard_hero.png" alt="Building Services Engineering Design" id="hero-graphic-image">
+        </div>
+      </section>
+      <section class="day-tab-container">
+        <div class="day-tabs">
+          <button class="day-tab" data-day="1" id="tab-day-1"><span class="day-num">Day 1</span><span class="day-title">Intro</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="2" id="tab-day-2"><span class="day-num">Day 2</span><span class="day-title">Purification</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="3" id="tab-day-3"><span class="day-num">Day 3</span><span class="day-title">Chemistry</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="4" id="tab-day-4"><span class="day-num">Day 4</span><span class="day-title">Supply</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="5" id="tab-day-5"><span class="day-num">Day 5</span><span class="day-title">Cold Water</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="6" id="tab-day-6"><span class="day-num">Day 6</span><span class="day-title">Hot Water</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="7" id="tab-day-7"><span class="day-num">Day 7</span><span class="day-title">Hardware</span><div class="status-dot"></div></button>
+        </div>
+      </section>
+      <div class="revision-layout">
+        <div class="study-guide">
+
+          <div class="day-panel" id="day-panel-1">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-bookmark-3-fill"></i></div><h3>Day 1: Definitions & Regulations</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. What are Building Services? (<span class="hl-blue">MEP Works</span>)</h4>
+                <p>Building services refer to the mechanical, electrical, and public health systems that provide water, energy, comfort, safety, and sanitation in buildings. It involves <span class="hl-blue">MEP works</span>. Building services are usually divided into three major categories:</p>
+                <ul>
+                  <li><strong>1. <span class="hl-blue">Mechanical Services</span>:</strong> These systems involve heating, cooling, ventilation, and air movement in buildings. Examples include:
+                    <ul>
+                      <li>Heating systems</li>
+                      <li>Air conditioning systems</li>
+                      <li>Mechanical ventilation</li>
+                      <li>Elevators and escalators</li>
+                      <li>Smoke extraction systems</li>
+                    </ul>
+                    These systems ensure thermal comfort and air quality for occupants.
+                  </li>
+                  <li><strong>2. <span class="hl-blue">Electrical Services</span>:</strong> These systems supply and distribute electrical power and lighting in a building. Examples include:
+                    <ul>
+                      <li>Electrical power distribution</li>
+                      <li>Lighting systems</li>
+                      <li>Backup generators</li>
+                      <li>Fire alarm systems</li>
+                      <li>Security systems</li>
+                      <li>Communication systems (data and internet)</li>
+                    </ul>
+                    <span class="hl-blue">Electrical services</span> ensure buildings have power, lighting, and communication infrastructure.
+                  </li>
+                  <li><strong>3. Plumbing:</strong> These systems deal with water supply and sanitation. Examples include:
+                    <ul>
+                      <li>Cold water supply</li>
+                      <li>Hot water supply</li>
+                      <li>Plumbing systems</li>
+                      <li><span class="hl-blue">Drainage systems</span></li>
+                      <li>Sewage disposal</li>
+                      <li>Stormwater drainage</li>
+                      <li><span class="hl-blue">Fire protection systems</span></li>
+                    </ul>
+                    These systems ensure clean water supply and safe waste removal.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Guidelines and Oversight Authorities</h4>
+                <p>In Kenya, the guidelines, standards, and codes for plumbing and sanitation are primarily provided by a combination of national government ministries, regulatory boards, and professional bodies. The key authorities are:</p>
+                <ul>
+                  <li><strong><span class="hl-purple">Kenya Bureau of Standards</span> (<span class="hl-purple">KEBS</span>):</strong> Specifies quality standards, material standards for pipes, fittings, and appliances.</li>
+                  <li><strong><span class="hl-purple">Water Services Regulatory Board</span> (<span class="hl-purple">WASREB</span>):</strong> A national regulator that sets national standards, guidelines, and rules for water and sewerage services, ensuring compliance with the <span class="hl-purple">Water Act 2016</span> and the human right to sanitation.</li>
+                  <li><strong><span class="hl-purple">Ministry of Water</span>, Sanitation and Irrigation (<span class="hl-purple">MoWSI</span>):</strong> Responsible for policy development regarding sanitation management and water supply services.</li>
+                  <li><strong>Ministry of Public Works – Mechanical & Drainage Department:</strong> Defines technical specifications, installation methods, and testing standards for plumbing systems.</li>
+                  <li><strong><span class="hl-purple">National Construction Authority</span> (<span class="hl-purple">NCA</span>):</strong> Regulates the construction industry, ensuring standards in building works, including plumbing.</li>
+                  <li><strong><span class="hl-purple">Kenya Water Institute</span> (<span class="hl-purple">KEWI</span>):</strong> Develops technical manuals for water supply and sanitation, including the <span class="hl-purple">Practice Manual for Water Supply Services in Kenya</span>.</li>
+                  <li><strong><span class="hl-purple">County Governments</span>:</strong> Responsible for enforcing standards and implementing county-specific water and sanitation strategies and local authority by-laws.</li>
+                  <li><strong>Professional Boards (<span class="hl-purple">EBK</span>, <span class="hl-purple">BORAQS</span>):</strong> Registered Engineers (ERB) and Architects (<span class="hl-purple">BORAQS</span>) must sign off on plans, ensuring they meet professional standards.</li>
+                  <li><strong><span class="hl-purple">The Institution of Engineers of Kenya</span> (<span class="hl-purple">IEK</span>)</strong></li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Key Regulations and Codes</h4>
+                <ul>
+                  <li><strong>The <span class="hl-purple">National Building Code 2024</span>:</strong> Sets technical requirements for building services, including plumbing.</li>
+                  <li><strong>Water Services Regulations, 2021/2024:</strong> Governs the provision of water and sewage services across the country.</li>
+                  <li><strong><span class="hl-purple">Public Health Act</span> (Cap 242):</strong> Oversees sanitation and hygiene standards to prevent nuisance.</li>
+                  <li><strong>Environmental Management and Coordination (Water Quality) Regulations:</strong> Ensures safe disposal of wastewater.</li>
+                  <li><strong>Sewerage and Sanitation Design Manual:</strong> Used for designing sewerage systems.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Categories of Water Consumption in Kenya</h4>
+                <ul>
+                  <li><strong>Domestic:</strong> e.g. drinking, cooking, ablution, sanitation, laundry, garden watering, and bathing pools.</li>
+                  <li><strong>Trade and industry:</strong> e.g. factories, power stations, shops, hotels, hospitals, schools and in offices.</li>
+                  <li><strong>Agriculture:</strong> e.g. horticulture, greenhouses, dairies, and livestock farms, etc.</li>
+                  <li><strong>Public use:</strong> e.g. parks, schools, hospitals, street watering, sewer flushing and firefighting.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>5. Plumbing vs Drainage and Common Plumbing Issues</h4>
+                <p>In truth 'plumbing' involves plumbing and <span class="hl-blue">drainage system</span> and one needs to differentiate the two.</p>
+                <p><strong>PLUMBING:</strong> Plumbing involves the installation pipes, fixtures, and apparatus to supply potable water to a building. It encompasses the entire network—including pipes, tanks, and valves—that brings clean water in.</p>
+                <p>Most common plumbing issues include:</p>
+                <ul>
+                  <li><strong>Leaky pipes:</strong> can be caused by pipe corrosion, pipe joint damage, excessive water pressure and a host of other issues.</li>
+                  <li><strong>Low water pressure:</strong> can be a symptom of a more significant problem such as hidden water leaks and blocked pipes.</li>
+                  <li><strong>Faulty water heater:</strong> possible causes include incorrect water pressure, a broken electrical connection and aging equipment.</li>
+                  <li><strong>Running toilet:</strong> a damaged flush valve or faulty flushing handle could be to blame.</li>
+                  <li><strong>Clogged toilet:</strong> often caused by flushing objects that should not be flushed.</li>
+                  <li><strong>Water heater problems:</strong> among the possible causes are sediment build-up and heating element failures.</li>
+                </ul>
+                <p><strong>Main Components of Plumbing:</strong> a) Water Source, b) Storage Tanks and distribution, d) Distribution Pipes, e) Fittings-valves, f) Fixtures.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-1" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-1" style="font-weight: 600; cursor: pointer;">Mark Day 1 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-2">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-filter-2-fill"></i></div><h3>Day 2: Water Sources & Purification</h3></div>
+
+              <div class="concept-point">
+                <h4>1. Water Source</h4>
+                <p>There are 3 main sources of water:</p>
+                <ul>
+                  <li><strong>i. Rainfall.</strong></li>
+                  <li><strong>ii. Surface sources:</strong> Lakes, streams, rivers, reservoirs, run off from roofs and paved areas.</li>
+                  <li><strong>iii. Underground sources:</strong> Shallow wells, deep wells, artesian wells, artesian springs, land.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Purification Processes</h4>
+                <p>Some purification of water is often necessary to remove impurities and possibly to reduce the hardness of water. Purification may involve three major processes as follows:</p>
+                <ul>
+                  <li><strong>a) <span class="hl-green">Sedimentation</span>:</strong> <span class="hl-green">Sedimentation</span> is the process where heavy particles settle at the bottom of a tank due to gravity. Sludge accumulates at the bottom and clarified water moves to the next stage.</li>
+                  <li><strong>b) <span class="hl-green">Filtration</span>:</strong> <span class="hl-green">Filtration</span> is the process of passing water through porous materials to remove suspended particles.</li>
+                  <li><strong>c) Treatment-<span class="hl-green">Chlorination</span></strong></li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. <span class="hl-green">Filtration</span> of water: i) <span class="hl-green">Pressure filter</span></h4>
+                <p>A <span class="hl-green">pressure filter</span> is a closed <span class="hl-green">filtration</span> system where water is forced through filter media under pressure to remove suspended particles and impurities. Unlike <span class="hl-green">slow sand filters</span>, <span class="hl-green">pressure filters</span> operate inside a sealed tank.</p>
+                <p><strong>How <span class="hl-green">Pressure Filters</span> Work:</strong> Water is pumped into a pressure vessel containing filter media such as sand or activated carbon. The pressure forces water through the media, where:</p>
+                <ul>
+                  <li>Suspended solids are trapped</li>
+                  <li>Turbidity is reduced</li>
+                  <li>Some impurities are removed</li>
+                </ul>
+                <p>The filtered water exits through the bottom of the filter.</p>
+                <p><strong><span class="hl-green">Filtration</span> Rate:</strong> <span class="hl-green">Pressure filters</span> operate at much higher <span class="hl-green">filtration</span> rates than <span class="hl-green">slow sand filters</span>. Typical rate: <strong>5 – 15 m³/m²/hour</strong>.</p>
+                <p><strong><span class="hl-green">Backwashing</span>:</strong> Over time, the filter media becomes clogged with particles. To clean it, <span class="hl-green">backwashing</span> is done by:</p>
+                <ul>
+                  <li>Reversing the flow of water</li>
+                  <li>Flushing out trapped particles</li>
+                </ul>
+                <p>To backwash, valve A is closed and valves B and C opened.</p>
+                <div class="grid-2">
+                  <div style="background: rgba(16, 185, 129, 0.05); padding: 1rem; border-radius: 10px;">
+                    <strong style="color: var(--color-success);">Advantages:</strong>
+                    <ul><li>Requires less space</li><li>Higher <span class="hl-green">filtration</span> rate</li><li>Compact design</li><li>Suitable for buildings and industries</li></ul>
+                  </div>
+                  <div style="background: rgba(239, 68, 68, 0.05); padding: 1rem; border-radius: 10px;">
+                    <strong style="color: var(--color-danger);">Disadvantages:</strong>
+                    <ul><li>Requires pumps and energy</li><li>Higher operational cost</li><li>Requires regular maintenance</li></ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. <span class="hl-green">Filtration</span> of water: c) <span class="hl-green">Slow sand filter</span> bed</h4>
+                <p>A <span class="hl-green">slow sand filter</span> is a water <span class="hl-green">filtration</span> system where water passes slowly through a bed of sand to remove impurities and microorganisms. It is one of the oldest and most effective natural water purification methods.</p>
+                <p><strong>How a <span class="hl-green">Slow Sand Filter</span> Works:</strong> Water moves slowly by gravity through layers of sand and gravel. During this process:</p>
+                <ol>
+                  <li>Suspended particles are physically trapped in the sand.</li>
+                  <li>Microorganisms are removed by biological action.</li>
+                </ol>
+                <p><strong>Main Components of a <span class="hl-green">Slow Sand Filter</span>:</strong></p>
+                <ol>
+                  <li><strong>Supernatant water layer:</strong> Raw water stored above the sand bed.</li>
+                  <li><strong>Sand bed:</strong> Fine sand that performs most of the <span class="hl-green">filtration</span>.</li>
+                  <li><strong>Gravel layer:</strong> Supports the sand and allows water to flow evenly.</li>
+                  <li><strong>Underdrain system:</strong> Collects filtered water.</li>
+                </ol>
+                <p><strong><span class="hl-green">Filtration</span> Rate:</strong> <span class="hl-green">Slow sand filters</span> operate at a very low <span class="hl-green">filtration</span> rate: <strong>0.1 – 0.3 m³/m²/hour</strong>. Because of the slow rate, they require large surface areas. Filter beds can occupy large areas and the top layer of sand will require removal and cleaning at periodic intervals.</p>
+                <p><strong>Common Applications:</strong> Rural water treatment plants, Small communities, Developing regions, Small municipal systems.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>5. <span class="hl-green">Filtration</span> of water: c) Small domestic filter</h4>
+                <p>The unglazed porcelain cylinder will arrest very fine particles of dirt and even micro-organisms. The cylinder can be removed and sterilized in boiling water for 10 minutes.</p>
+              </div>
+
+              <div class="schematic-card">
+                <img src="images/water_filtration_diagram.png" class="schematic-img" alt="Water Purification Steps Infographic">
+                <div class="schematic-caption">
+                  <i class="ri-settings-5-line"></i> <strong>Purification Stages:</strong> <span class="hl-green">Sedimentation</span>, pressurized/sand <span class="hl-green">filtration</span>, and <span class="hl-green">chlorination</span>.
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-2" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-2" style="font-weight: 600; cursor: pointer;">Mark Day 2 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-3">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-flask-fill"></i></div><h3>Day 3: Chemistry of <span class="hl-green">Disinfection</span> & <span class="hl-green">Water Softening</span></h3></div>
+              
+              <div class="concept-point">
+                <h4>1. <span class="hl-green">Sterilization</span> of Water</h4>
+                <p><strong>Definition:</strong> <span class="hl-green">Sterilization</span> (also called <span class="hl-green">disinfection</span>) is the process of destroying harmful microorganisms in water to make it safe for drinking. Untreated water may contain microorganisms such as Bacteria, Viruses, Parasites. These microorganisms can cause waterborne diseases such as cholera, typhoid, and dysentery.</p>
+                <p><strong>a) <span class="hl-green">Sterilization</span> by Chlorine Injection:</strong> <span class="hl-green">Chlorination</span> involves adding small quantities of chlorine to water to destroy harmful microorganisms and organic matter. Chlorine is widely used because it is:</p>
+                <ul>
+                  <li>Highly effective against bacteria</li>
+                  <li>Relatively inexpensive</li>
+                  <li>Easy to apply</li>
+                  <li>Provides a residual disinfectant effect</li>
+                </ul>
+                <p><strong>Process of <span class="hl-green">Chlorination</span>:</strong></p>
+                <ol>
+                  <li>Water is first treated through <span class="hl-green">filtration</span> to remove suspended particles.</li>
+                  <li>A measured amount of chlorine is injected into the water.</li>
+                  <li>Chlorine reacts with microorganisms and destroys their cellular structure.</li>
+                  <li>The treated water is stored for a short contact period to allow <span class="hl-green">disinfection</span> to occur.</li>
+                </ol>
+                <p><strong>Chlorine Dosage:</strong> The typical chlorine dosage for drinking water is <strong>0.1 – <span class="hl-amber">0.3 parts per million</span> (ppm)</strong>. This amount is sufficient to Kill harmful bacteria and Maintain a small residual chlorine level in the distribution system. Residual chlorine helps prevent recontamination of water during storage and distribution.</p>
+                <div class="grid-2">
+                  <div style="background: rgba(16, 185, 129, 0.05); padding: 1rem; border-radius: 10px;">
+                    <strong style="color: var(--color-success);">Advantages of <span class="hl-green">Chlorination</span>:</strong>
+                    <ul><li>Effective at killing pathogens</li><li>Low cost</li><li>Provides residual protection</li><li>Suitable for large-scale water supply systems</li></ul>
+                  </div>
+                  <div style="background: rgba(239, 68, 68, 0.05); padding: 1rem; border-radius: 10px;">
+                    <strong style="color: var(--color-danger);">Limitations:</strong>
+                    <ul><li>Excess chlorine can produce unpleasant taste and odor</li><li>High chlorine levels may form <span class="hl-green">disinfection</span> by-products</li><li>Requires proper dosage control</li></ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Softening of <span class="hl-green">Hard Water</span></h4>
+                <p><strong>Definition:</strong> <span class="hl-green">Water softening</span> is the process of removing dissolved minerals such as calcium and magnesium that cause <span class="hl-green">water hardness</span>. <span class="hl-green">Hard water</span> commonly contains: Calcium carbonate, Calcium sulphate, Magnesium salts.</p>
+                <p><strong>Problems Caused by <span class="hl-green">Hard Water</span>:</strong></p>
+                <ul>
+                  <li>Formation of scale deposits in pipes and boilers</li>
+                  <li>Reduced efficiency of water heaters</li>
+                  <li>Increased soap consumption</li>
+                  <li>Stains on plumbing fixtures</li>
+                  <li>Reduced lifespan of appliances</li>
+                </ul>
+                <p><strong>Softening by Base Exchange Process (<span class="hl-green">Zeolite</span> Process):</strong></p>
+                <p><strong>Principle:</strong> The base exchange process uses a material called <span class="hl-green">sodium zeolite</span>, which has the ability to exchange sodium ions for calcium and magnesium ions present in <span class="hl-green">hard water</span>. This process removes hardness from water.</p>
+                <p><strong>Chemical Reaction:</strong> When <span class="hl-green">hard water</span> passes through <span class="hl-green">sodium zeolite</span> it exchanges its sodium ions with Ca+ Mg+ :</p>
+                <div class="chemical-formula"><span class="hl-green">Sodium zeolite</span> + calcium salts → <span class="hl-green">calcium zeolite</span> + sodium salts</div>
+                <p>Example reactions:</p>
+                <div class="alert-note" style="font-family: monospace;">
+                  Na₂Ze + CaCO₃ → CaZe + Na₂CO₃<br>
+                  Na₂Ze + CaSO₄ → CaZe + Na₂SO₄<br>
+                  Na₂Ze + MgSO₄ → MgZe + Na₂SO₄
+                </div>
+                <p>In this reaction: Calcium and magnesium ions are removed from water; Sodium ions replace them. As a result, the water becomes softened.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Regeneration of <span class="hl-green">Zeolite</span></h4>
+                <p>Over time, the <span class="hl-green">zeolite</span> becomes exhausted because it becomes saturated with calcium and magnesium ions. To restore its effectiveness, the <span class="hl-green">zeolite</span> must be regenerated.</p>
+                <p><strong>Regeneration Process:</strong> Salt (<span class="hl-green">sodium chloride</span> also known as <span class="hl-green">brine</span>) is added to the <span class="hl-green">zeolite</span> bed.</p>
+                <div class="alert-note" style="font-family: monospace;">Chemical reaction: CaZe + 2NaCl → Na₂Ze + CaCl₂</div>
+                <p>During this process:</p>
+                <ul>
+                  <li>Sodium ions from salt replace calcium ions in the <span class="hl-green">zeolite</span></li>
+                  <li>Calcium chloride is formed</li>
+                  <li>The calcium salts are then flushed away during <span class="hl-green">backwashing</span></li>
+                </ul>
+                <p>The <span class="hl-green">zeolite</span> is now ready to soften water again.</p>
+                <div class="grid-2">
+                  <div style="background: rgba(16, 185, 129, 0.05); padding: 1rem; border-radius: 10px;">
+                    <strong style="color: var(--color-success);">Advantages of Base Exchange:</strong>
+                    <ul><li>Highly effective in removing <span class="hl-green">water hardness</span></li><li>Simple and reliable method</li><li>Suitable for domestic and industrial use</li><li>Can be regenerated and reused many times</li></ul>
+                  </div>
+                  <div style="background: rgba(239, 68, 68, 0.05); padding: 1rem; border-radius: 10px;">
+                    <strong style="color: var(--color-danger);">Limitations:</strong>
+                    <ul><li>Requires regular regeneration using salt</li><li>Does not remove bacteria or other impurities</li><li>May increase sodium content in water</li></ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="schematic-card">
+                <img src="images/water_softening_zeolite.png" class="schematic-img" alt="Sodium Zeolite Ion Exchange Infographic">
+                <div class="schematic-caption">
+                  <i class="ri-drop-line"></i> <strong>Ion Exchange:</strong> Sodium ions are replaced by Calcium and Magnesium minerals, softening the water supply.
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-3" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-3" style="font-weight: 600; cursor: pointer;">Mark Day 3 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-4">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-road-map-fill"></i></div><h3>Day 4: Public Supply & Mains</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Storage and Distribution of Water</h4>
+                <p>In building services engineering, water must be stored and distributed properly to ensure a reliable supply to all parts of a building.</p>
+                <p>Water storage and distribution systems are designed to:</p>
+                <ul>
+                  <li>Provide continuous water supply</li>
+                  <li>Maintain adequate pressure</li>
+                  <li>Meet peak water demand</li>
+                  <li>Provide water during supply interruptions</li>
+                  <li>Ensure water is available for fire protection</li>
+                </ul>
+                <p>In many areas, water supply from municipal sources may be intermittent, making storage facilities essential. Water storage refers to the collection and holding of water in tanks or reservoirs before it is distributed for use in a building. Storage ensures that water is available even when the main supply is interrupted or demand increases.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Types of Water Storage Tanks</h4>
+                <p>Water in buildings is usually stored in two main types of tanks.</p>
+                <p><strong>i) Underground Storage Tanks</strong></p>
+                <p>These tanks are located below ground level. The purpose of which is to store water received from municipal supply or boreholes and act as the main water reservoir for the building.</p>
+                <ul>
+                  <li><strong>Characteristics:</strong> Usually made of reinforced concrete, steel, or plastic. Large storage capacity. Protected from contamination and temperature changes.</li>
+                  <li><strong>Advantages:</strong> Large storage volume. Protected from sunlight and temperature changes. Does not occupy useful building space.</li>
+                </ul>
+                <p><strong>ii) Overhead Storage Tanks</strong></p>
+                <p>These tanks are installed above the building, usually on the roof or a tower. The purpose of which is to provide gravity-based water distribution and maintain water pressure in the building.</p>
+                <ul>
+                  <li><strong>Characteristics:</strong> Usually made from plastic (PVC), fiberglass, or steel. Located at the highest point of the building.</li>
+                  <li><strong>Advantages:</strong> Provides water pressure through gravity. Ensures continuous supply during pump failure.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Supply of Water to the Building</h4>
+                <p>Water is supplied by local authority to estates via a <span class="hl-blue">water main</span>. A <span class="hl-blue">water main</span> is a water <span class="hl-blue">supply pipe</span> usually serving water to an estate. It’s installed by the Local Authority. The <span class="hl-blue">water mains</span> are usually dig and laid underground. <span class="hl-blue">UPVC</span> pipes are pigmented blue for easy identification in future excavations and cast iron has a blue plastic tape attached for the same reason.</p>
+                
+                <p><strong>Connection to <span class="hl-blue">Water Main</span>, Service and <span class="hl-blue">Supply Pipe</span>:</strong> Connection to <span class="hl-blue">water main</span> is done by the local authority upon written notice for connection to their supply main. The main is drilled and tapped live with special equipment, which leaves a plug valve ready for connection to the communication pipe. A <span class="hl-blue">goose neck</span> or sweeping bend is formed at the connection to relieve stresses on the pipe and valve.</p>
+                
+                <p><strong><span class="hl-blue">Goose Neck</span> (<span class="hl-blue">Swan Neck</span>):</strong> A short curved section of pipe used to connect the <span class="hl-blue">water main</span> to the <span class="hl-blue">service pipe</span>. Purpose: Provides flexibility, Absorbs movement due to soil settlement, Prevents damage to the pipe joint. This is particularly important in Kenya where road excavation, soil movement, and heavy traffic loads may occur.</p>
+                
+                <p><strong><span class="hl-blue">Service Pipe</span> (Communication Pipe):</strong> The pipe that connects the <span class="hl-blue">water mains</span> and brings water to or close to the property boundary. It is usually installed and maintained by the local authority. Functions: Carries water from the public <span class="hl-blue">water main</span>, Supplies water up to the property boundary, Connects the public supply to the private plumbing system.</p>
+                
+                <p><strong><span class="hl-blue">Stop Valve</span> and <span class="hl-blue">Water Meter</span>:</strong> At or close to the property boundary, a <span class="hl-blue">stop valve</span> is located with an access compartment and cover at ground level. A meter may also be located at this point. The purpose of the <span class="hl-blue">stop valve</span> is to enable the local authority to disconnect the water supply in case of non-payment or maintenance.</p>
+                
+                <p><strong><span class="hl-blue">Supply Pipe</span>:</strong> The pipe that runs water from the <span class="hl-blue">stop valve</span> into the building is called the <span class="hl-blue">supply pipe</span>. (A <span class="hl-blue">supply pipe</span> is any pipe, maintained by the consumer, which is subject to water pressure from the authority’s mains.) Unlike the <span class="hl-blue">service pipe</span>, the <span class="hl-blue">supply pipe</span> is Installed and maintained by the property owner, Considered part of the private plumbing system.</p>
+
+                <p><strong>Internal <span class="hl-blue">Stop Valve</span>:</strong> Where the <span class="hl-blue">supply pipe</span> enters the building, another <span class="hl-blue">stop valve</span> should be installed. This allows the building owner or occupants to: Shut off the water supply, Carry out repairs or maintenance, Prevent water damage during pipe failures.</p>
+
+                <p><strong>Pipe Flexibility and Settlement:</strong> Both the <span class="hl-blue">service pipe</span> and <span class="hl-blue">supply pipe</span> should be laid with slight curves or “snaking”. This allows the pipe to: Adjust to ground settlement, Prevent pipe breakage, Reduce stress on pipe joints. Straight rigid pipes are more likely to crack when soil movement occurs.</p>
+
+                <p><strong><span class="hl-blue">Distributing Pipes</span>:</strong> A <span class="hl-blue">distributing pipe</span> is any pipe that conveys water plumbing fixtures within the building. These pipes form part of the internal plumbing distribution network. Function: Deliver water to Wash basins, Showers, Sinks, Toilets, Water heaters.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Typical Water Supply Path to a Building</h4>
+                <p>The flow of water to a building generally follows this sequence:</p>
+                <div class="alert-note">
+                  Water Treatment Plant &rarr; <span class="hl-blue">Water Main</span> (Public Supply) &rarr; <span class="hl-blue">Service Pipe</span> / Communication Pipe &rarr; <span class="hl-blue">Stop Valve</span> and <span class="hl-blue">Water Meter</span> &rarr; <span class="hl-blue">Supply Pipe</span> &rarr; Internal <span class="hl-blue">Stop Valve</span> &rarr; Storage Tank or Distribution Pipes &rarr; Plumbing Fixtures
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-4" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-4" style="font-weight: 600; cursor: pointer;">Mark Day 4 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-5">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-home-4-fill"></i></div><h3>Day 5: Cold Water Distribution</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Supply of Water in the Building</h4>
+                <p>Broadly divided into: Cold Water Supply and Hot Water Supply.</p>
+                <p>Cold water supply is nothing but an external water supply. However, cold water supply system can also use filter, water softener appliances, or any other fixture. The connection for the cold-water system is done in such a way that other appliances could receive it through fixtures and taps. Such appliances include sinks, hot water heaters, faucets, bathtubs, showers etc.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Direct System of Cold-Water Supply</h4>
+                <p>In this system, water from the <span class="hl-blue">rising main</span> is tapped to have drinking water at every draw-off point. There is no storage for other uses except a storage cistern supplying the hot water cylinder whose capacity is not more than <span class="hl-amber">115 litres</span> capacity. Drinking/portable water is therefore available at every draw-off point and maintenance valves should be fitted to isolate each section of pipework.</p>
+                <p>With every outlet supplied from the main, the possibility of back siphonage must be considered. (Back siphonage is the reverse flow of water into water supply cause of negative pressure in supply line). Back siphonage can occur when there is a high demand on the main. Negative pressure can then draw water back into the main from a submerged inlet, e.g., a rubber tube attached to a tap or a shower fitting without a <span class="hl-blue">check valve</span> facility left lying in dirty bath water.</p>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                  <li>Small cold water storage cistern to feed hot water tanks required. This reduces builders work to support larger storage tanks.</li>
+                  <li>A uniformly high-pressure supply to all hot and cold-water outlets some distance below the pumped head of the supply.</li>
+                  <li>Drinking water is available at all points.</li>
+                  <li>Reduces pipework.</li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                  <li>In case of pipe bursts(mains) there is water shortage.</li>
+                  <li>There is risk of water contamination due to back siphonage.</li>
+                  <li>High pressure from the mains provides higher level of noise.</li>
+                  <li>High pressure from the mains contributes to wear on fittings which necessitates comparatively frequent inspection, maintenance and repair of many valves and controls to the system.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Indirect Cold-Water Supply</h4>
+                <p>In this system, the <span class="hl-blue">rising main</span> <span class="hl-blue">service pipe</span> serves only one draw-off point often the kitchen sink. All other cold-water draw-off points are supplied from the storage cistern. The cold-water storage cistern has a minimum capacity of <span class="hl-amber">230 litres</span>, for location in the roof space. In addition to its normal supply function, it provides an adequate emergency storage in the event of <span class="hl-blue">water main</span> failure.</p>
+                <p>The system requires more pipework than the direct system and is therefore more expensive to install, but uniform pressure occurs at all cistern-supplied outlets. The water authorities prefer this system as it imposes less demand on the main. Also, with fewer fittings attached to the main, there is less chance of back siphonage. Other advantages of lower pressure include less noise and wear on fittings, and the opportunity to install a balanced pressure shower from the cistern.</p>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                  <li>Reserves supply in case of mains failure.</li>
+                  <li>With fewer fittings attached to the main, there is less chance of back siphonage therefore reducing risk of contamination.</li>
+                  <li>The internal distribution pipes accrue lower pressure which translate less noise and wear on fittings, and the opportunity to install a balanced pressure shower from the cistern.</li>
+                  <li>The air gap between the <span class="hl-blue">supply pipe</span> and the water level in the cistern acts as an effective barrier to backflow into the mains supply, which can cause contamination.</li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                  <li>Requires more pipe work.</li>
+                  <li>The considerable weight of a filled cistern has to be supported at high level.</li>
+                  <li>The inconvenience of access to the cistern for inspection and maintenance.</li>
+                  <li>The possibility of the cistern overflowing.</li>
+                  <li>The need to insulate effectively the cistern and its associated pipework against freezing.</li>
+                  <li>Animals and insects may enter the cistern and contaminate the water held in the open Cistern.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Hydro-pneumatic Cold Water Supply System</h4>
+                <p>Hydro-pneumatic system is a variation of direct pumping system. A hydro-pneumatic cold water supply system is a water supply system where pumps and compressed air in a pressure tank are used to maintain constant water pressure and distribute cold water throughout a building. Hydro-pneumatic system generally eliminates the need for an overhead tank and supply water at a much higher pressure than available from overhead tanks particularly on the upper floors, resulting in even distribution of water at all floors.</p>
+                <p>The system uses three main elements: 1. Water pump, 2. Pressure tank (hydro-pneumatic tank), 3. Compressed air cushion.</p>
+                <p><strong>Step-by-step operation:</strong></p>
+                <ol>
+                  <li>Water from the main supply or storage tank enters the system.</li>
+                  <li>A pump pushes the water into a sealed pressure tank.</li>
+                  <li>Inside the tank there is compressed air above the water.</li>
+                  <li>As water enters, the air compresses and stores pressure energy.</li>
+                  <li>When taps are opened, the compressed air pushes water out through the distribution pipes.</li>
+                  <li>When pressure drops below a set level, the pump automatically starts again.</li>
+                </ol>
+                <p><strong>Basically, the system is configured into 5 types they are:</strong></p>
+                <ol>
+                  <li>Single booster system</li>
+                  <li>Zone- divided system</li>
+                  <li>Roof tanks system</li>
+                  <li>Series- connected systems with intermediate break tanks</li>
+                  <li>Series- connected system</li>
+                </ol>
+              </div>
+
+              <div class="concept-point">
+                <h4>5. Cold Water Storage Tanks</h4>
+                <p>Tanks can be manufactured from galvanized mild steel (large nondomestic capacities), polypropylene or glass reinforced plastics. They must be well insulated and supported on adequate bearers to spread the concentrated load. Plastic tanks will require uniform support on boarding over bearers. A dustproof cover is essential to prevent contamination.</p>
+                <p>For large buildings, cisterns are accommodated in a purpose- made plant room at roof level or within the roof structure. This room must be well insulated and ventilated, and be provided with thermostatic control of a heating facility. Where storage demand exceeds <span class="hl-amber">4500 litres</span>, tanks must be duplicated and interconnected. In the interests of load distribution this should be provided at much lower capacities. For maintenance and repairs each cistern must be capable of isolation and independent operation.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-5" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-5" style="font-weight: 600; cursor: pointer;">Mark Day 5 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-6">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-temp-hot-fill"></i></div><h3>Day 6: <span class="hl-blue">Hot Water Systems</span></h3></div>
+
+              <div class="concept-point">
+                <h4>1. Hot Water Supply Systems in Kenya</h4>
+                <p>A hot water supply system is a system designed to generate, store, control, and distribute heated water to various building fixtures while maintaining required temperature, pressure and flow conditions. The design of <span class="hl-blue">hot water systems</span> is an important component of building services engineering, particularly in facilities where hygiene, comfort, and operational processes require controlled thermal water supply.</p>
+                <p>The selection of heating energy sources depends on energy availability, building scale, operational cost, and environmental considerations. Energy sources include:</p>
+                
+                <p><strong>1. Electric Water Heating:</strong> This is the most common system in urban residential buildings. Electric heating elements inside a tank heat water.</p>
+                <ul>
+                  <li><strong>Types:</strong> Instant electric heaters and storage electric heaters.</li>
+                  <li><strong>a) Storage Water Heaters:</strong> Water is heated and stored in insulated tanks. Typical tank sizes: <span class="hl-amber">50 L</span>, <span class="hl-amber">100 L</span>, <span class="hl-amber">200 L</span>, <span class="hl-amber">300 L</span>. These systems rely on thermostatic control to maintain desired temperatures.</li>
+                  <li><strong>b) Instantaneous (Tankless) Electric Heaters:</strong> Water is heated on demand using high-power heating elements. Advantages: Eliminates standby heat losses, Compact design. Limitations: Requires high electrical power, Limited simultaneous demand capacity. In Kenya, electricity costs often make electric heaters expensive for large-scale hot water demand.</li>
+                </ul>
+
+                <p><strong>2. Solar Water Heating Systems:</strong> Solar water heating systems convert solar radiation into thermal energy using collectors. Kenya lies near the equator, receiving average solar radiation of approximately 4–6 kWh/m²/day, making solar heating highly viable.</p>
+                <ul>
+                  <li><strong>Components:</strong> 1. Solar collectors, 2. Storage tanks, 3. Circulation pumps (in active systems), 4. Heat exchangers, 5. Backup heating systems.</li>
+                  <li><strong>i. Thermosiphon Systems:</strong> Operate through natural convection circulation. Hot water rises while cold water sinks. Advantages: No pumps required, Simple operation. Limitations: Requires elevated storage tanks.</li>
+                  <li><strong>ii. Forced Circulation Systems:</strong> Use pumps to circulate water between collectors and storage tanks. Suitable for: Large buildings, Multi-storey facilities.</li>
+                </ul>
+
+                <p><strong>3. Gas Water Heating:</strong> Not so common in Kenya. Gas water heaters utilize combustion of LPG or natural gas. Gas heating provides: Rapid heating, High thermal output, Lower operational costs compared to electric heating. However, systems require: Proper ventilation, Gas leak detection, Safety compliance.</p>
+
+                <p><strong>4. Heat Pump Water Heating:</strong> Heat pumps extract heat from surrounding air to heat water. Heat pumps operate based on refrigeration cycle thermodynamics, transferring heat from ambient air to water. The cycle includes: 1. Evaporation, 2. Compression, 3. Condensation, 4. Expansion. Advantages: Very energy efficient, Lower energy consumption. Disadvantages: High installation cost, Requires technical maintenance.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Classification of Hot Water Supply Systems</h4>
+                <p><span class="hl-blue">Hot water systems</span> may be classified according to location of heating equipment and distribution method.</p>
+                <ul>
+                  <li><strong>a) Centralized <span class="hl-blue">Hot Water Systems</span>:</strong> A centralized system produces hot water in one central plant room and distributes it through the building. Components include: Central boilers or heaters, Storage tanks, Distribution pipe networks, Recirculation pumps. Typical Applications: Hotels, Hospitals, Apartments, Universities, Industrial facilities. Advantages: Efficient for large buildings, Easier maintenance (central equipment). Disadvantages: Higher installation cost, Heat loss in long pipe runs.</li>
+                  <li><strong>b) Decentralized (Localized / Point-of-Use) <span class="hl-blue">Hot Water Systems</span>:</strong> In decentralized systems, multiple small heaters are installed close to points of use. Examples include: Electric shower heaters, Under-sink heaters, Small tank heaters in kitchens. Advantages: Reduced distribution heat losses, Lower initial cost for small buildings, Instant hot water at fixtures. Disadvantages: Multiple units require maintenance, Higher long-term operational costs.</li>
+                  <li><strong>3. Combined (Hybrid) <span class="hl-blue">Hot Water System</span>:</strong> This system combines central heating with localized heating to meet varying demand. Example: A building may have Central solar <span class="hl-blue">hot water system</span> and Electric point heaters for peak demand. Advantages: Flexible, Energy efficient, Reduces central system load.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Hot Water Distribution Systems & Heat Loss</h4>
+                <p>Hot water distribution systems must maintain adequate pressure, flow rate, and temperature at all fixtures. The main distribution methods include:</p>
+                <ul>
+                  <li><strong>Gravity Circulation Systems:</strong> Hot water is supplied from elevated storage tanks. The driving force is gravitational head: These systems are simple but limited in tall buildings.</li>
+                  <li><strong>Pumped Circulation Systems:</strong> Circulation pumps maintain continuous water flow through the system. Advantages include: Consistent pressure, Suitable for tall buildings.</li>
+                  <li><strong>Recirculating <span class="hl-blue">Hot Water Systems</span>:</strong> Recirculation systems continuously circulate hot water in the distribution network. This reduces waiting time for hot water at fixtures. Benefits: Improves user comfort, Reduces water wastage. However, it increases: Pumping energy consumption, Heat losses.</li>
+                </ul>
+                <p><strong>Heat Loss in <span class="hl-blue">Hot Water Systems</span>:</strong> Heat losses occur through: Pipe conduction, Tank heat losses, Distribution inefficiencies. To reduce heat losses: Pipes should be insulated, Distribution networks should be short and efficient.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Temperature Control, Safety and Design Considerations</h4>
+                <p><span class="hl-blue">Hot water systems</span> must balance comfort and safety. Typical temperature guidelines:</p>
+                <ul>
+                  <li>Domestic bathing: <span class="hl-amber">40–50°C</span></li>
+                  <li>Storage tanks: <span class="hl-amber">60°C</span></li>
+                  <li>Hospitals: <span class="hl-amber">60–70°C</span></li>
+                </ul>
+                <p>Safety devices include: Temperature relief valves, Pressure relief valves, Thermostatic mixing valves, Expansion tanks.</p>
+                <p><strong>Design Considerations for Engineers:</strong></p>
+                <ol>
+                  <li><strong>Peak Demand:</strong> Calculated based on Number of occupants, Type of building, Usage patterns.</li>
+                  <li><strong>Storage Capacity:</strong> Storage tanks must meet peak demand periods.</li>
+                  <li><strong>Pipe Sizing:</strong> Pipes must ensure Adequate flow rates, Minimal pressure losses.</li>
+                  <li><strong>Energy Efficiency:</strong> Design strategies include Solar heating integration, Pipe insulation, Efficient pumps.</li>
+                  <li><strong>Maintenance Accessibility:</strong> Mechanical equipment should be placed in accessible plant rooms.</li>
+                </ol>
+                <p><strong>Challenges in Hot Water Supply Systems in Kenya:</strong> High electricity costs, Limited adoption of advanced technologies, Poor maintenance practices, Mineral scaling in heating elements due to <span class="hl-green">hard water</span>, Inconsistent water supply in some regions.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-6" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-6" style="font-weight: 600; cursor: pointer;">Mark Day 6 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-7">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-settings-4-fill"></i></div><h3>Day 7: Pipes & Valves</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Pipe Materials and Specifications</h4>
+                <p>The pipes used in a building must not contaminate potable water supply, and must be suitable for the water pressure, flow rate and temperature of water they will be carrying. Other considerations are durability, ease of installation, cost, and sustainability. Pipes must be suitable for expected temperatures and pressures, compatible with water supply to minimize electrolytic corrosion, and suitable for ground conditions and local climate (freezing or salt).</p>
+                
+                <p><strong>Types of Pipes Used in Water Transmission:</strong></p>
+                <ol>
+                  <li>Galvanized iron (GI)</li>
+                  <li>Cast/ grey iron</li>
+                  <li>Ductile iron</li>
+                  <li>Steel</li>
+                  <li><span class="hl-blue">UPVC</span> (un-plasticized polyvinylchloride)</li>
+                  <li>PVC (polyvinyl chloride)</li>
+                  <li><span class="hl-blue">Polyethylene</span> (PE)</li>
+                  <li>GRP (glass reinforced plastic)</li>
+                  <li>Pre-stressed concrete, cylinder or non-cylinder (PSC)</li>
+                  <li>Reinforced concrete cylinder (RC)</li>
+                  <li>HDPE and LDPE</li>
+                  <li>PPR (Polypropylene Random pipes)</li>
+                  <li>Other materials include copper and lead (lead is phased out due to poisoning effect).</li>
+                </ol>
+                
+                <p><strong>Contrast Between Different Pipes:</strong></p>
+                <ul>
+                  <li><strong><span class="hl-blue">GI PIPES</span>:</strong> Used mainly as <span class="hl-blue">supply pipes</span> on main water lines for treated water. From <span class="hl-amber">15mm</span> to <span class="hl-amber">150mm</span>. Length mostly <span class="hl-amber">6 meters</span>. Mostly used in: Rocky grounds, places where pipeline crosses roads and busy paths, where water theft needs to be controlled. Advantages: robust, difficult to tap illegally, easy to join. Disadvantages: expensive, disruptive to lay, corrodes in some soils.</li>
+                  <li><strong>DUCTILE IRON PIPES:</strong> Similar to GI, robust and difficult to tap illegally. Disadvantages: Need to be coated depending on soil to prevent rusting, rubber gaskets at joints can be damaged, are expensive.</li>
+                  <li><strong>ALUMINIUM PIPES:</strong> Light weight, durable. Phased out gradually. Advantages: cheaper price, arbitrary curved bow, smooth surface. Disadvantages: Easy to age, pipe joint leakage appears easily, short life span.</li>
+                  <li><strong>PPR PIPES:</strong> Designed for Hot and Cold water supply and heating applications. Sizes range from <span class="hl-amber">20mm</span> to <span class="hl-amber">110mm</span> in thicknesses. Suitable for residential, industrial, solar, compressed air, drinking water, radiator heating.</li>
+                  <li><strong>HDPE PIPES:</strong> High-density <span class="hl-blue">polyethylene</span> thermoplastic. Large strength-to-density ratio. Can withstand higher temperatures (120°C short, 110°C continuous). Preferred for industrial, domestic and irrigation. Advantages: Strong, resilient, light weight, leak proof, chemical resistant, economical, long lasting, maintenance free. Disadvantages: Cannot be used in soil contaminated with oils/petrol.</li>
+                  <li><strong><span class="hl-blue">UPVC</span> PIPES:</strong> Unplasticised Polyvinylchloride. Elastomeric Sealing Ring type joints are best preferred for rural/urban water supply, irrigation in hilly areas or desert areas. Advantages: Strong, durable, light weight, convenient joining, energy saving, leak proof, rust resistant, odourless.</li>
+                  <li><strong>PVC PIPES:</strong> Rigid, lightweight, strong. Replaces cast iron and galvanized pipe in almost all situations. Used in construction of drains, vents, and to handle waste. Not for very high temperatures. Advantages: Easy to install, low cost, chemically resistant, strong, fire resistant, low friction loss. Disadvantages: Degrades with UV rays (needs painting), melts in fire. <span class="hl-blue">UPVC</span> is better for potable water because it doesn't contain plasticizers (BPA/phthalates).</li>
+                  <li><strong>PE PIPES:</strong> High density, good flexibility, bear strong shocks and twists in earthquakes. Has long performance life of 50 years. Does not cause bacteria or secondary pollution. Lightweight and easy to weld. Used for municipal administration water supplies, chemicals, irrigation.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Pipe Installation and Failure</h4>
+                <p>Installation determines the durability of pipelines and conservation of water. Precaution must be taken. Example PVC Procedure: Cut with hacksaw straight. Clean shavings and deburr. Clean with primer. Apply special cement. Pipe inserted and turned to ensure glue covers joint. Use pipe hangers every 4 feet for support.</p>
+                <p><strong>Pipe Failure:</strong> Mostly linked to improper installation practices and methods in the field. Main Causes:</p>
+                <ol>
+                  <li><strong>Improper System Engineering/Installation:</strong> Inadequate provision for linear thermal expansion, Excess/insufficient use of Cement, Wrong Clamps used or too tight, Incompatible fire caulk used.</li>
+                  <li><strong>Improper Operation:</strong> Exposure to freezing temperatures without freeze protection, Over-pressurization, Pulsating water pressure, Use of incompatible materials around pipes.</li>
+                  <li><strong>Contamination:</strong> Use of contaminated antifreeze, Incompatible Fire Caulk, Exposure to hot solder flux, Exposure to hot polyurethane foam insulation.</li>
+                  <li><strong>Manufacturing defects:</strong> Dirty extrusion die, Incomplete resin consolidation, High stresses in pipe wall due to rapid cooling.</li>
+                  <li><strong>Abuse by Distributor:</strong> Store in sun, Damage during transport due to careless handling.</li>
+                </ol>
+                <p>Problems with pipeline transmission: Bursting, Friction, Pressure dynamics, Stealing of pipes, Rusting, Contamination, Freezing.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Main Types of Plumbing Valves</h4>
+                <p>A valve is a type of fitting that allows for regulation, control, and direction of fluids passing through a pipe. Allow to isolate sections for repairs, or shut off line.</p>
+                <ol>
+                  <li><strong><span class="hl-blue">Stop Valve</span> (<span class="hl-blue">Stopcock</span>):</strong> Used to completely stop or allow the flow of water. Installed at property boundary, before plumbing fixtures. Shut off water supply during repairs.</li>
+                  <li><strong><span class="hl-blue">Gate Valve</span>/<span class="hl-blue">Sluice valve</span>:</strong> Uses a metal gate or wedge that moves up and down. Designed to be fully opened or fully closed. If used to adjust flow, it can wear out.</li>
+                  <li><strong>Reflux/ <span class="hl-blue">Check Valve</span> (<span class="hl-blue">Non-Return Valve</span>):</strong> Allows water to flow in only one direction. Automatically prevents reverse flow. Prevents Backflow contamination, Reverse flow in pumps, Drainage of water from tanks. Has a hinged gate.</li>
+                  <li><strong>Butterfly Valve:</strong> Has a rotating metal disc that allows and inhibits water flow. Very compact, light, and relatively short. Fully open or closed when the disc is rotated a quarter turn. Can also be opened incrementally to throttle flow.</li>
+                  <li><strong><span class="hl-blue">Ball Valve</span>:</strong> Most reliable type. Involves a rotating sphere with a hole attached to a lever handle. When lever is in line with pipe, valve is open. When perpendicular, it's closed.</li>
+                  <li><strong><span class="hl-blue">Float Valve</span>:</strong> Automatic valve used to control the water level in storage tanks. Operates using a floating ball connected to a lever.</li>
+                  <li><strong><span class="hl-blue">Globe valve</span>:</strong> Commonly used to regulate or limit the water flow, where flow needs to be adjusted regularly. Stopper on the end of a valve stem that is raised and lowered. Design forces flow to change direction, creating pressure drop and turbulence.</li>
+                  <li><strong>Pressure Relief Valve:</strong> Automatic cutoff valves or safety valves. Keep pressure below predetermined value to prevent pipe bursting. Consists of a spring-loaded disc.</li>
+                  <li><strong>Air Valves:</strong> Provided to prevent accumulation of air at higher points that creates backward pressure. Has a cast iron chamber, float, lever, poppet valve.</li>
+                  <li><strong>Foot valve</strong></li>
+                </ol>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Fittings used in water supply pipework</h4>
+                <p>Fittings are appurtenances used in the pipeline to carry out following functions: connect pipe of different sizes, change direction of flow, connect pipe to other appurtenances.</p>
+                <ul>
+                  <li><strong>Bend:</strong> Change direction of pipeline.</li>
+                  <li><strong>Tee:</strong> One inlet and two outlets.</li>
+                  <li><strong>Cross:</strong> Connect four pipe sections.</li>
+                  <li><strong>Wye:</strong> Two inlets or one outlet or vice versa. Used to create a branch.</li>
+                  <li><strong>Reducer:</strong> Joins two pipes of different diameters.</li>
+                  <li><strong>Plug:</strong> Closes off the end of the pipe.</li>
+                  <li><strong>Socket:</strong> Fits over the pipe. Plain connects same diameters, reducing connects different.</li>
+                  <li><strong>Nipple:</strong> Short stub of pipe used for connecting two other fittings.</li>
+                  <li><strong>Union:</strong> Connects two pipes for quick and convenient disconnection.</li>
+                  <li><strong><span class="hl-blue">Stopcock</span>:</strong> Cut off valves of small size.</li>
+                  <li><strong>Water tap:</strong> Used to obtain water from the consumers.</li>
+                </ul>
+              </div>
+
+              <div class="schematic-card">
+                <img src="images/plumbing_valves_grid.png" class="schematic-img" alt="Plumbing Valves Grid Diagram">
+                <div class="schematic-caption">
+                  <i class="ri-settings-line"></i> <strong>Hydraulic Valves:</strong> Gate, Ball, Butterfly, and Check safety valves.
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-7" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-7" style="font-weight: 600; cursor: pointer;">Mark Day 7 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <aside class="revision-suite">
+          <!-- Flashcards -->
+          <div class="suite-card" id="flashcard-widget-card">
+            <h3><i class="ri-article-line"></i> Revision Flashcards</h3>
+            <div class="flashcard-arena" id="revision-flashcard-arena">
+              <div class="flashcard-inner">
+                <div class="flashcard-front">
+                  <span class="flashcard-card-title" id="flashcard-card-title-text">Tap to Reveal</span>
+                  <p class="flashcard-text" id="flashcard-front-content">Flashcard Front</p>
+                </div>
+                <div class="flashcard-back">
+                  <span class="flashcard-card-title">Concept Definition</span>
+                  <p class="flashcard-text" id="flashcard-back-content" style="font-size: 0.85rem; font-weight: 400;">Flashcard Back</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-space" style="margin-bottom: 1rem;">
+              <span id="flashcard-position-indicator" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">1 / 4</span>
+              <button id="flashcard-shuffle-btn" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                <i class="ri-shuffle-line"></i> Shuffle
+              </button>
+            </div>
+            <div class="flashcard-controls">
+              <button class="btn" id="flashcard-prev-btn"><i class="ri-arrow-left-s-line"></i> Prev</button>
+              <button class="btn btn-accent" id="flashcard-next-btn">Next <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+
+          <!-- Quiz -->
+          <div class="suite-card" id="quiz-widget-card">
+            <h3 id="quiz-day-title"><i class="ri-questionnaire-line"></i> Day 1 Revision Quiz</h3>
+            <div class="quiz-container" id="quiz-body-area"></div>
+          </div>
+          
+          <!-- Sandbox -->
+          <div class="suite-card" id="calculator-widget-card">
+            <h3><i class="ri-calculator-line"></i> Engineering Sandbox</h3>
+            <div class="calc-container">
+              <div class="calc-tabs">
+                <button class="calc-tab-btn active" id="calc-tab-head">Head Pressure</button>
+                <button class="calc-tab-btn" id="calc-tab-flow">Pipe Sizer</button>
+              </div>
+              <div id="calc-form-head" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-height">Static Height / Head (h)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-height" class="calc-input" value="15" min="0" step="0.5">
+                    <span class="calc-unit">meters</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-density">Fluid Density (&rho;)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-density" class="calc-input" value="1000" min="500">
+                    <span class="calc-unit">kg/m³</span>
+                  </div>
+                </div>
+              </div>
+              <div id="calc-form-flow" style="display: none; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-q">Design Flow Rate (Q)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-q" class="calc-input" value="2.5" min="0.1" step="0.1">
+                    <span class="calc-unit">L/s</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-velocity">Water Velocity (v)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-velocity" class="calc-input" value="1.2" min="0.1" max="5" step="0.1">
+                    <span class="calc-unit">m/s</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-output-card">
+                <div class="calc-result-label">Calculated Output</div>
+                <div class="calc-result-value" id="calc-result-val">147.15 kPa</div>
+                <div class="calc-result-sub" id="calc-result-sub">
+                  Equivalent to <strong>1.47 bar</strong>.<br>
+                  P = &rho; &middot; g &middot; h formula used.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

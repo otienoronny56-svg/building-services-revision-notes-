@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanitary Topic 2 - Exhaustive <span class="hl-amber">6-Day</span> Revision Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient-bg" id="bubble-container"></div>
+  <div class="app-container">
+    <aside class="sidebar" id="dashboard-sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-drop-fill"></i></div>
+        <div>
+          <h2>Revision Hub</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Building Services</span>
+          <div class="badge-ronny" style="color: var(--color-primary) !important;">systems by ronny</div>
+        </div>
+      </div>
+                                          <div class="sidebar-header-right">
+<div class="topic-dropdown-container">
+        <button class="topic-dropdown-btn" id="topic-dropdown-btn">
+          <span>T2: Sanitary</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="topic-dropdown-menu" id="topic-dropdown-menu">
+          <a href="index.html" class="topic-dropdown-item"><i class="ri-drop-line"></i> T1: Plumbing</a>
+          <a href="topic2.html" class="topic-dropdown-item active"><i class="ri-article-line"></i> T2: Sanitary</a>
+          <a href="topic3.html" class="topic-dropdown-item"><i class="ri-water-flash-line"></i> T3: Drainage</a>
+          <a href="topic4.html" class="topic-dropdown-item"><i class="ri-recycle-line"></i> T4: Solid Waste</a>
+          <a href="topic5.html" class="topic-dropdown-item"><i class="ri-fire-line"></i> T5: Fire Protection</a>
+          <a href="topic6.html" class="topic-dropdown-item"><i class="ri-arrow-up-down-line"></i> T6: Mechanical Trans.</a>
+          <a href="topic7.html" class="topic-dropdown-item"><i class="ri-windy-line"></i> T7: Ventilation</a>
+          <a href="topic8.html" class="topic-dropdown-item"><i class="ri-snowflake-line"></i> T8: Air-Conditioning</a>
+        </div>
+      </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="ri-moon-line moon-icon"></i>
+          <i class="ri-sun-line sun-icon"></i>
+        </button>
+      </div>
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Overall Revision</span>
+          <span class="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="sidebar-progress-bar"></div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="ri-medal-line" style="color: var(--color-accent-warm); font-size: 1.1rem;"></i>
+          <span id="overall-badge-title" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main);">Junior Apprentice</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem;">
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-calendar-check-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="days-completed-count" style="font-size: 0.9rem; line-height: 1.1;">0</span>
+            <span class="label" style="font-size: 0.65rem;">Days Studied</span>
+          </div>
+        </div>
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-line-chart-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="avg-quiz-score" style="font-size: 0.9rem; line-height: 1.1;">0%</span>
+            <span class="label" style="font-size: 0.65rem;">Avg Quiz Score</span>
+          </div>
+        </div>
+      </div>
+      <nav style="flex-grow: 1; overflow-y: auto;">
+        <h3 style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 0.75rem;">Study Plan</h3>
+        <ul class="nav-menu">
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="1" id="nav-day-1"><i class="ri-bookmark-3-line"></i> Day 1: Terminology</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="2" id="nav-day-2"><i class="ri-showers-line"></i> Day 2: Appliances</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="3" id="nav-day-3"><i class="ri-settings-4-line"></i> Day 3: Fittings</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="4" id="nav-day-4"><i class="ri-sip-line"></i> Day 4: Traps & Seals</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="5" id="nav-day-5"><i class="ri-paint-brush-line"></i> Day 5: Pipe Works</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="6" id="nav-day-6"><i class="ri-route-line"></i> Day 6: Systems</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <span>BQS III-II Revision App</span>
+        <span>Developer Pair: <a href="#">Antigravity</a></span>
+        <span style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="ri-whatsapp-line" style="color: var(--color-primary); font-size: 0.95rem;"></i>
+          <a href="https://wa.me/254745806488" target="_blank" class="footer-ronny">systems by ronny</a>
+        </span>
+      </div>
+    </aside>
+    <main class="main-dashboard" id="dashboard-main">
+      <section class="hero-banner" id="hero-banner-section">
+        <div class="hero-content">
+          <div style="display: inline-block; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--border-active); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--color-success); margin-bottom: 0.75rem; text-transform: uppercase;">
+            Topic 2: Sanitary (Soil & Waste Appliances)
+          </div>
+          <h1>Mastering Sanitary Systems</h1>
+          <p>An interactive <span class="hl-amber">6-day</span> study experience covering Soil and Waste Water Appliances used in buildings. Every detail from the 26-page Topic 2 manual is included here perfectly and simply for your exams.</p>
+          <div class="stats-grid-row">
+            <div class="stat-pill"><i class="ri-file-text-line"></i><div><span class="num">26</span><span class="label">Pages Covered</span></div></div>
+            <div class="stat-pill"><i class="ri-checkbox-multiple-line"></i><div><span class="num">30</span><span class="label">Quiz Qs</span></div></div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="images/plumbing_valves_grid.png" alt="Sanitary Engineering Design" id="hero-graphic-image">
+        </div>
+      </section>
+      <section class="day-tab-container">
+        <div class="day-tabs">
+          <button class="day-tab" data-day="1" id="tab-day-1"><span class="day-num">Day 1</span><span class="day-title">Terminology</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="2" id="tab-day-2"><span class="day-num">Day 2</span><span class="day-title">Appliances</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="3" id="tab-day-3"><span class="day-num">Day 3</span><span class="day-title">Fittings</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="4" id="tab-day-4"><span class="day-num">Day 4</span><span class="day-title">Traps</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="5" id="tab-day-5"><span class="day-num">Day 5</span><span class="day-title">Pipes</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="6" id="tab-day-6"><span class="day-num">Day 6</span><span class="day-title">Systems</span><div class="status-dot"></div></button>
+        </div>
+      </section>
+      <div class="revision-layout">
+        <div class="study-guide">
+
+          <div class="day-panel" id="day-panel-1">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-bookmark-3-fill"></i></div><h3>Day 1: Terminology & Introduction</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Introduction to Sanitary Systems</h4>
+                <p>In buildings, many types of sanitary appliances are required. They fulfill a variety of specialized functions connected with the drainage and disposal of sewage and refuse from buildings. They can be divided broadly into <strong>waste appliances</strong> and <strong>soil appliances</strong>.</p>
+                <ul>
+                  <li><strong>Soil water (Black water):</strong> Wastewater containing human waste from toilets, urinals, or bidets.</li>
+                  <li><strong>Wastewater (Grey water):</strong> Water from sinks, showers, baths, and washing machines. It contains dirt, grease, soap, or food particles, but no human waste.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Sanitary Appliances vs. Sanitary Fittings</h4>
+                <ul>
+                  <li><strong>Sanitary Appliances or Fixtures:</strong> These are sanitary objects or appliances that are fixed or attached. They are commonly referred to as <em>sanitary furniture</em>. They are static, immovable, and permanently connected to a plumbing system for the reception and discharge of water or waste. Examples: Water closet (WC), washbasin, urinal, floor drain, flushing cisterns, showers, faucets, bathtubs, sinks, bidet.</li>
+                  <li><strong>Sanitary Fittings:</strong> Also known as hygienic fittings or sanitary clamps. These are objects used to seal, clamp and fasten two or more separate ends of sanitary fixtures to maintain a high hygienic standard. They create closures, linkages, and secure connections so there are no leaking gaps for bacteria. Examples: Adapter, coupling, sleeve, union, cap, plug, elbow, tee, wye, cross, reducer.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Soil System & Sewerage System</h4>
+                <ul>
+                  <li><strong>Soil System:</strong> Refers to the network of pipes and fittings responsible for collecting and conveying wastewater from sanitary fixtures to the sewer or sewage treatment system.</li>
+                  <li><strong>Sewerage System:</strong> The entire network of pipes, pumps, and other infrastructure designed to collect and transport wastewater from various sources to treatment plants or disposal points.</li>
+                  <li><strong>Effluent:</strong> The treated or untreated liquid discharge from a wastewater treatment system, septic tank, or other plumbing appliance.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Traps & Water Seals</h4>
+                <p><strong>Trap:</strong> A device designed to retain a small amount of water to prevent the passage of sewer gases into living spaces while allowing wastewater to flow freely.</p>
+                <p><strong>Water seal:</strong> A small amount of water retained in the U-shaped bend of a plumbing trap (like P-traps or S-traps) under fixtures. It acts as a hygienic, airtight barrier.</p>
+                <ul>
+                  <li><strong>Purpose:</strong> To block methane, hydrogen sulfide, and other hazardous gases, odors, bacteria, and pests.</li>
+                  <li><strong>Mechanism:</strong> The U-bend retains water after a fixture is used, creating a physical barrier.</li>
+                  <li><strong>Potential Failures:</strong> The seal can be lost through evaporation, backpressure, or siphoning.</li>
+                  <li><strong>Solutions:</strong> Adding water, using a trap seal primer, or a specialized one-way valve trap seal.</li>
+                </ul>
+                <p><strong>Grease Trap:</strong> A device installed in commercial kitchens to capture and retain grease and solids before they enter the wastewater disposal system.</p>
+                <p><strong>Backflow Prevention:</strong> The installation of devices or methods to prevent the reversal of flow in a <span class="hl-blue">drainage system</span> which could contaminate the potable water supply.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-1" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-1" style="font-weight: 600; cursor: pointer;">Mark Day 1 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-2">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-showers-fill"></i></div><h3>Day 2: Sanitary Appliances</h3></div>
+
+              <div class="concept-point">
+                <h4>1. Washbasins (LAV-US) & Sinks</h4>
+                <p><strong>Washbasins:</strong> The standard basin consists of a bowl, weir overflow, and holes for taps. It is supported on brackets or a pedestal which conceals the pipework. For best functionality, it should:</p>
+                <ul>
+                  <li>Have a slotted overflow hole.</li>
+                  <li>Have internal angles designed to facilitate cleaning.</li>
+                  <li>Have a circular waste hole in the bottom.</li>
+                  <li>Have an integral soap holder recess that drains into the bowl.</li>
+                  <li>Have a tapering rubber plug fitted in the outlet to hold water.</li>
+                </ul>
+                <p><strong>Sinks:</strong> Rectangular shallow receptacles suitable for kitchens or laboratories. The floor of the sink slopes towards the circular waste hole. Kitchen sinks typically have a draining board on the right or both sides (double bowl double drain). Overflow slots are provided.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Bathtubs & Bidets</h4>
+                <p><strong>Bathtubs:</strong> Sinks come in stainless steel, porcelain, and cast iron. Bathtubs must be provided with one over-flow pipe to take excessive water. The waste pipe of the bath is provided with a trap to prevent foul gases from entering the bathroom.</p>
+                <p><strong>Bidets:</strong> A sanitary appliance used for personal hygiene after using the toilet. It typically involves spraying water onto the genital and anal area.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Water Closets (W.C.)</h4>
+                <p>A WC is a sanitary appliance to receive human excreta directly and is connected to the soil pipe by means of a trap. They are classified into:</p>
+                <ol>
+                  <li><strong>Squatting type or Indian type</strong></li>
+                  <li><strong>Wash-down, Pedestal or European type</strong></li>
+                </ol>
+                <p>Features of modern WCs include elongated oval/D-shaped bowls, adjustable nozzles (for combined bidets), smooth non-porous surfaces for efficient cleaning, and options for hygienic drying.</p>
+                <p><strong>Flushing Cisterns:</strong> Used for flushing WCs and urinals. Provided with an inlet pipe, overflow pipe, and an automatic closing float <span class="hl-blue">ball valve</span>.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Urinals & Faucets</h4>
+                <p><strong>Urinals:</strong> Used to collect urine. The inside surface is regular and smooth for efficient flushing. The bottom slopes towards the outlet for drainage.</p>
+                <ul>
+                  <li>They are washed at intervals of 20 minutes by an automatic flushing cistern discharging 4.<span class="hl-amber">5 liters</span> of water per <span class="hl-amber">610 mm</span> of stall width.</li>
+                  <li>Types: Slab type, Stall type, Squatting plate (mostly ladies' lavatories).</li>
+                </ul>
+                <p><strong>Faucets:</strong> Control the flow of water from pipes to sinks, bathtubs, showers, and bidets. Styles include single-handle, double-handle, touchless, and sensor-activated.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-2" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-2" style="font-weight: 600; cursor: pointer;">Mark Day 2 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-3">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-settings-4-fill"></i></div><h3>Day 3: Sanitary Fittings</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Connection Types</h4>
+                <ul>
+                  <li><strong>Ball and sleeve fittings:</strong> Connects an outer sleeve to an inner (ball) fitting. The sleeve retracts to connect/disconnect.</li>
+                  <li><strong>Barbed fittings:</strong> Connects flexible hose tubing via a barbed end with a tapered stub and ridges. Best suited for low-pressure applications (not a strong seal).</li>
+                  <li><strong>Cam-lock fittings:</strong> Connected using tabs which fold down into the receiver to lock the fitting. Used in heavy-duty applications (fire hose, sludge pumping).</li>
+                  <li><strong>Compression fittings:</strong> Connect vessels using compression on a gasket, ring, or ferrule.</li>
+                  <li><strong>Crimp fittings:</strong> Placing a vessel over a tubular end and crimping against it with a sleeve/crimp socket using crimping tools.</li>
+                  <li><strong>Plain ends:</strong> Allow vessels to be connected by adhesive or solder.</li>
+                  <li><strong>Flanges:</strong> Used to connect pipes, pumps, valves. Fixed using welding/threading and sealed with bolts. Allows for easy cleaning and inspection.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Fittings that Extend or Terminate</h4>
+                <ul>
+                  <li><strong>Adapters:</strong> Connect unlike pipes (make ends male or female threaded). Used heavily for PVC and copper pipes.</li>
+                  <li><strong>Couplings:</strong> Used to stop leakages in broken or damaged pipes. Connects pipes of the SAME diameter permanently.</li>
+                  <li><strong>Unions:</strong> Similar to a coupling but can be removed easily at any time.</li>
+                  <li><strong>Caps & Plugs:</strong> Used to close ends of a pipe. Plugs are fitted inside the pipe and threaded. Caps go over the outside and can be glued/soldered.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Fittings that Add or Change Directions</h4>
+                <ul>
+                  <li><strong>Elbows:</strong> Change the direction of flow. Standard types are 90-degree and 45-degree angles.</li>
+                  <li><strong>Tees:</strong> T-shaped fitting with one inlet and two outlets at 90 degrees. Used to merge flow. If all sides are the same size, it's an equal tee; otherwise, unequal tee.</li>
+                  <li><strong>Cross:</strong> Contains four openings in four major directions. Used in fire sprinkler systems.</li>
+                  <li><strong>Wyes (Y-fittings):</strong> Used in <span class="hl-blue">drainage systems</span> to keep water flow smooth with a branch at 45 degrees. Used when sanitary tees fail to work horizontally.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Reducers and Regulating Valves</h4>
+                <p><strong>Reducers:</strong> Change vessel size to reduce flow size. Two kinds: Concentric reducer (cone shape, gradual) and Eccentric reducer (one flat edge facing the mouth to reduce air accumulation).</p>
+                <p><strong>Regulating Fittings:</strong> Gate valves, globe valves, angle valves, check valves (spring/swing), ball valves, metered valves, thermostatic valves, pressure reducing valves, sensor operated valves.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-3" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-3" style="font-weight: 600; cursor: pointer;">Mark Day 3 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-4">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-sip-fill"></i></div><h3>Day 4: Traps & Water Seals</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Know Your Installations (Trap Geometries)</h4>
+                <p>Traps are not separate systems—just different geometries. They provide a water seal.</p>
+                <ul>
+                  <li><strong>P-Trap:</strong> Shape looks like the letter P. Used where the waste pipe goes through the <strong>wall</strong>. Most common in modern plumbing.</li>
+                  <li><strong>S-Trap:</strong> Shape looks like S. Used where the pipe goes through the <strong>floor</strong>. Can cause self-siphonage (water seal loss) more easily.</li>
+                  <li><strong>Q-Trap:</strong> Similar to P-trap but with a slightly different bend. Less common.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Specific Trap Types</h4>
+                <ul>
+                  <li><strong>Gully Trap:</strong> Built external to the building to carry wastewater from sinks/washbasins to the nearest sewer. Profound seal traps with a water seal depth of <strong>at least <span class="hl-amber">50 mm</span></strong>. Prevents foul gases and cockroaches from entering house pipes. Available in P, S, and Q shapes.</li>
+                  <li><strong>Floor Trap:</strong> Receives wastewater from showers, bathroom floors, and kitchens, transmitting it to drainage pipes while preventing foul sewer gases.</li>
+                  <li><strong>Bottle Trap:</strong> Given to get squander from washbasins and kitchen sinks where the apparatus doesn't have an underlying trap. Shaped like a bottle.</li>
+                  <li><strong>Intercepting Trap:</strong> Installed in the Interceptor Manhole (Chamber) at the junction of the building sewer and the public sewer. Prevents foul gases from the public sewer from entering the building's drainage network.</li>
+                  <li><strong>Grease Trap:</strong> Introduced in waste lines from food handling units to isolate and hold grease. Can be cleaned from the surface.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Loss of Trap Water Seal</h4>
+                <p>The most obvious cause of water seal loss is leakage due to defective fittings. Otherwise, it is caused by poor system design/installation:</p>
+                <ul>
+                  <li><strong>Self-siphonage:</strong> As an appliance discharges, water fills the waste pipe and creates a vacuum that draws out the seal. Caused by waste pipes that are too long, too steep, or too small in diameter.</li>
+                  <li><strong>Induced siphonage:</strong> The discharge from one appliance draws out the seal of an <em>adjacent</em> appliance by creating a vacuum in a shared branch pipe. Common in undersized shared waste pipes or stacks.</li>
+                  <li><strong>Back pressure:</strong> Compression occurs due to resistance to flow at the base of a stack, displacing water in the lowest trap upwards. Caused by a bottom bend radius being too small or the lowest branch being too close to the stack base.</li>
+                  <li><strong>Capillary action:</strong> A piece of rag, string, or hair caught on the trap outlet slowly wicks water out over the edge.</li>
+                  <li><strong>Wavering out:</strong> Gusts of wind blowing over the top of the vent stack cause a partial vacuum, disturbing water seals.</li>
+                  <li><strong>Evaporation:</strong> During prolonged inactivity, water evaporates. Handled by manually adding water or using trap seal primers.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-4" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-4" style="font-weight: 600; cursor: pointer;">Mark Day 4 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-5">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-paint-brush-fill"></i></div><h3>Day 5: Sanitary Pipe Works</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. The 5 Types of Drainage Water Pipes</h4>
+                <p>There are 5 primary types of drainage water pipes used in building construction.</p>
+                <ol>
+                  <li><strong>Soil Pipes:</strong> Designed to carry soiled (black) water from the toilet or urinal to the sewer. Soil pipes must be vented high at the top of a building (soil pipe stacks) to allow harmful and foul gases produced by waste to vent safely into the atmosphere.</li>
+                  <li><strong>Waste Pipes:</strong> Often a smaller diameter pipe that carries grey wastewater from sinks, washing machines, showers, and baths. It does not carry human waste, so it doesn't need the exact same venting system as a soil pipe (it generates fewer harmful gases), but it still requires proper drainage slopes.</li>
+                  <li><strong>Vent Pipes:</strong> Attached to the top of soil and waste pipes specifically for the release of bad odors and to prevent siphonage of water seals by balancing the air pressure in the <span class="hl-blue">drainage system</span>.</li>
+                  <li><strong>Rainwater Pipes:</strong> Attached to the roof or open areas to collect rainwater. Drawn to the ground level to be removed or connected to a rainwater harvesting tank. Generally made of PVC.</li>
+                  <li><strong>Anti-Siphonage Pipes:</strong> Connected to the outlets of toilets and fixtures. Their specific job is to maintain the water seal by preventing induced or self-siphonage, ensuring foul gases cannot enter bathrooms. Made of PVC and must conform to exact sizing specifications.</li>
+                </ol>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-5" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-5" style="font-weight: 600; cursor: pointer;">Mark Day 5 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-6">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-route-fill"></i></div><h3>Day 6: Plumbing Systems</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Introduction to Plumbing <span class="hl-blue">Drainage Systems</span></h4>
+                <p>Plumbing is the network of pipes, tanks, and fittings used inside a building for supplying water and removing water-borne wastes. Drainage plumbing systems follow the general laws of gravity and pressure. There are four principal systems adopted in building drainage.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Two Pipe System</h4>
+                <p>This is considered the best and most improved type of plumbing <span class="hl-blue">drainage system</span>.</p>
+                <ul>
+                  <li>Two sets of vertical pipes are laid: one strictly for draining <strong>soil</strong> (black water) and another for draining <strong>sullage</strong> (grey waste water).</li>
+                  <li>Soil fixtures (latrines, urinals) connect via branches to the vertical soil pipe.</li>
+                  <li>Waste fixtures (baths, sinks, wash-basins) connect via branches to the vertical waste pipe.</li>
+                  <li>Crucially, the soil pipe and the waste pipe are <strong>separately ventilated</strong> by providing their own separate vent pipes.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. One Pipe System</h4>
+                <ul>
+                  <li>Instead of using two separate pipes, <strong>only one main vertical pipe</strong> is provided.</li>
+                  <li>This single vertical pipe collects both the soil water and the sullage water from their respective branch pipes.</li>
+                  <li>The main pipe is ventilated at its top with a cowl.</li>
+                  <li>In addition to the main pipe, a <strong>separate vent pipe</strong> is provided to ventilate all the traps, preventing siphonage.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>4. Single Stack System</h4>
+                <ul>
+                  <li>A single pipe system <strong>without providing any separate ventilation pipe</strong>.</li>
+                  <li>It uses only one vertical pipe to carry both sewage and sullage.</li>
+                  <li>There is no separate vent pipe network for the traps.</li>
+                  <li>Instead, the single main stack is extended up to about <span class="hl-amber">2 meters</span> higher than the roof level and fitted with a cowl to allow foul gases to escape. This requires very strict design of branch lengths and slopes to prevent self-siphonage.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>5. Partially Ventilated Single Stack System</h4>
+                <ul>
+                  <li>An improved form of the single stack system.</li>
+                  <li>In this system, only the traps of the <strong>water closets (soil appliances)</strong> are separately ventilated by a relief vent pipe.</li>
+                  <li>The waste appliances (sinks, baths) rely on the main stack for ventilation.</li>
+                  <li>It uses two pipes (like the one-pipe system), but the cost of branch ventilation is considerably reduced since waste traps don't get individual vent pipes.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-6" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-6" style="font-weight: 600; cursor: pointer;">Mark Day 6 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <aside class="revision-suite">
+          <!-- Flashcards -->
+          <div class="suite-card" id="flashcard-widget-card">
+            <h3><i class="ri-article-line"></i> Revision Flashcards</h3>
+            <div class="flashcard-arena" id="revision-flashcard-arena">
+              <div class="flashcard-inner">
+                <div class="flashcard-front">
+                  <span class="flashcard-card-title" id="flashcard-card-title-text">Tap to Reveal</span>
+                  <p class="flashcard-text" id="flashcard-front-content">Flashcard Front</p>
+                </div>
+                <div class="flashcard-back">
+                  <span class="flashcard-card-title">Concept Definition</span>
+                  <p class="flashcard-text" id="flashcard-back-content" style="font-size: 0.85rem; font-weight: 400;">Flashcard Back</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-space" style="margin-bottom: 1rem;">
+              <span id="flashcard-position-indicator" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">1 / 4</span>
+              <button id="flashcard-shuffle-btn" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                <i class="ri-shuffle-line"></i> Shuffle
+              </button>
+            </div>
+            <div class="flashcard-controls">
+              <button class="btn" id="flashcard-prev-btn"><i class="ri-arrow-left-s-line"></i> Prev</button>
+              <button class="btn btn-accent" id="flashcard-next-btn">Next <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+
+          <!-- Quiz -->
+          <div class="suite-card" id="quiz-widget-card">
+            <h3 id="quiz-day-title"><i class="ri-questionnaire-line"></i> Day 1 Revision Quiz</h3>
+            <div class="quiz-container" id="quiz-body-area"></div>
+          </div>
+          
+          <!-- Sandbox -->
+          <div class="suite-card" id="calculator-widget-card">
+            <h3><i class="ri-calculator-line"></i> Slope Calculator</h3>
+            <div class="calc-container">
+              <div class="calc-tabs">
+                <button class="calc-tab-btn active" id="calc-tab-fall">Pipe Fall</button>
+                <button class="calc-tab-btn" id="calc-tab-gradient">Gradient</button>
+              </div>
+              <div id="calc-form-head" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-height">Distance / Length (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-height" class="calc-input" value="10" min="0" step="0.5">
+                    <span class="calc-unit">meters</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-density">Gradient (1 in X)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-density" class="calc-input" value="40" min="10">
+                    <span class="calc-unit">X</span>
+                  </div>
+                </div>
+              </div>
+              <div id="calc-form-flow" style="display: none; flex-direction: column; gap: 0.75rem;">
+                <div class="calc-form-group">
+                  <label for="calc-input-q">Length (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-q" class="calc-input" value="15" min="0.1" step="0.1">
+                    <span class="calc-unit">m</span>
+                  </div>
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-input-velocity">Fall (m)</label>
+                  <div class="calc-input-wrapper">
+                    <input type="number" id="calc-input-velocity" class="calc-input" value="0.25" min="0.01" step="0.01">
+                    <span class="calc-unit">m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-output-card">
+                <div class="calc-result-label">Calculated Output</div>
+                <div class="calc-result-value" id="calc-result-val">0.<span class="hl-amber">25 m</span></div>
+                <div class="calc-result-sub" id="calc-result-sub">
+                  Equivalent to <strong><span class="hl-amber">250 mm</span></strong> fall.<br>
+                  Fall = Length / Gradient.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="topic2.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

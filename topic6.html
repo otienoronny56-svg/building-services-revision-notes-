@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mechanical Transportation Topic 6 - Exhaustive <span class="hl-amber">6-Day</span> Revision Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient-bg" id="bubble-container"></div>
+  <div class="app-container">
+    <aside class="sidebar" id="dashboard-sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-drop-fill"></i></div>
+        <div>
+          <h2>Revision Hub</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Building Services</span>
+          <div class="badge-ronny" style="color: var(--color-primary) !important;">systems by ronny</div>
+        </div>
+      </div>
+      <!-- NAV INJECTED HERE BY SCRIPT -->
+                        <div class="sidebar-header-right">
+<div class="topic-dropdown-container">
+        <button class="topic-dropdown-btn" id="topic-dropdown-btn">
+          <span>T6: Mechanical Trans.</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="topic-dropdown-menu" id="topic-dropdown-menu">
+          <a href="index.html" class="topic-dropdown-item"><i class="ri-drop-line"></i> T1: Plumbing</a>
+          <a href="topic2.html" class="topic-dropdown-item"><i class="ri-article-line"></i> T2: Sanitary</a>
+          <a href="topic3.html" class="topic-dropdown-item"><i class="ri-water-flash-line"></i> T3: Drainage</a>
+          <a href="topic4.html" class="topic-dropdown-item"><i class="ri-recycle-line"></i> T4: Solid Waste</a>
+          <a href="topic5.html" class="topic-dropdown-item"><i class="ri-fire-line"></i> T5: Fire Protection</a>
+          <a href="topic6.html" class="topic-dropdown-item active"><i class="ri-arrow-up-down-line"></i> T6: Mechanical Trans.</a>
+          <a href="topic7.html" class="topic-dropdown-item"><i class="ri-windy-line"></i> T7: Ventilation</a>
+          <a href="topic8.html" class="topic-dropdown-item"><i class="ri-snowflake-line"></i> T8: Air-Conditioning</a>
+        </div>
+      </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="ri-moon-line moon-icon"></i>
+          <i class="ri-sun-line sun-icon"></i>
+        </button>
+      </div>
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Overall Revision</span>
+          <span class="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="sidebar-progress-bar"></div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="ri-medal-line" style="color: var(--color-accent-warm); font-size: 1.1rem;"></i>
+          <span id="overall-badge-title" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main);">Junior Apprentice</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem;">
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-calendar-check-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="days-completed-count" style="font-size: 0.9rem; line-height: 1.1;">0</span>
+            <span class="label" style="font-size: 0.65rem;">Days Studied</span>
+          </div>
+        </div>
+        <div class="stat-pill" style="padding: 0.5rem 0.85rem;">
+          <i class="ri-line-chart-line" style="font-size: 1rem;"></i>
+          <div style="display:flex; flex-direction:column;">
+            <span class="num" id="avg-quiz-score" style="font-size: 0.9rem; line-height: 1.1;">0%</span>
+            <span class="label" style="font-size: 0.65rem;">Avg Quiz Score</span>
+          </div>
+        </div>
+      </div>
+      <nav style="flex-grow: 1; overflow-y: auto;">
+        <h3 style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 0.75rem;">Study Plan</h3>
+        <ul class="nav-menu">
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="1" id="nav-day-1"><i class="ri-building-line"></i> Day 1: Basics & Law</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="2" id="nav-day-2"><i class="ri-arrow-up-down-line"></i> Day 2: Lifts (Types)</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="3" id="nav-day-3"><i class="ri-settings-4-line"></i> Day 3: Lift Planning</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="4" id="nav-day-4"><i class="ri-stairs-line"></i> Day 4: Escalators</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="5" id="nav-day-5"><i class="ri-flight-takeoff-line"></i> Day 5: Travelators</button></li>
+          <li class="nav-item"><button class="nav-link sidebar-day-link" data-day="6" id="nav-day-6"><i class="ri-tools-line"></i> Day 6: Hoists & Install</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <span>BQS III-II Revision App</span>
+        <span>Developer Pair: <a href="#">Antigravity</a></span>
+        <span style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="ri-whatsapp-line" style="color: var(--color-primary); font-size: 0.95rem;"></i>
+          <a href="https://wa.me/254745806488" target="_blank" class="footer-ronny">systems by ronny</a>
+        </span>
+      </div>
+    </aside>
+    <main class="main-dashboard" id="dashboard-main">
+      <section class="hero-banner" id="hero-banner-section">
+        <div class="hero-content">
+          <div style="display: inline-block; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--color-primary); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem; text-transform: uppercase;">
+            Topic 6: Mechanical Transportation
+          </div>
+          <h1>Vertical Mobility</h1>
+          <p>An interactive <span class="hl-amber">6-day</span> study experience covering Lifts, Escalators, Travelators, and Hoists. Extracted precisely from the 28-page Topic 6 manual.</p>
+          <div class="stats-grid-row">
+            <div class="stat-pill"><i class="ri-file-text-line"></i><div><span class="num">28</span><span class="label">Pages Covered</span></div></div>
+            <div class="stat-pill"><i class="ri-checkbox-multiple-line"></i><div><span class="num">30</span><span class="label">Quiz Qs</span></div></div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="images/water_flow_diagram.png" alt="Mechanical Transportation" id="hero-graphic-image">
+        </div>
+      </section>
+      <section class="day-tab-container">
+        <div class="day-tabs">
+          <button class="day-tab" data-day="1" id="tab-day-1"><span class="day-num">Day 1</span><span class="day-title">Basics</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="2" id="tab-day-2"><span class="day-num">Day 2</span><span class="day-title">Lifts</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="3" id="tab-day-3"><span class="day-num">Day 3</span><span class="day-title">Control</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="4" id="tab-day-4"><span class="day-num">Day 4</span><span class="day-title">Escalators</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="5" id="tab-day-5"><span class="day-num">Day 5</span><span class="day-title">Travelators</span><div class="status-dot"></div></button>
+          <button class="day-tab" data-day="6" id="tab-day-6"><span class="day-num">Day 6</span><span class="day-title">Install</span><div class="status-dot"></div></button>
+        </div>
+      </section>
+      <div class="revision-layout">
+        <div class="study-guide">
+
+          <div class="day-panel" id="day-panel-1">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-building-fill"></i></div><h3>Day 1: Basics & Regulatory Framework</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. General Introduction</h4>
+                <p>High-rise buildings face huge challenges in moving people and goods. Mechanical transportation (Lifts, Travelators, Escalators, Hoists) improves traffic flow, reduces congestion, increases property value, and boosts rental demand.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Regulatory Framework in Kenya</h4>
+                <p>Governed by the Kenya Building Code, <span class="hl-purple">NCA</span> guidelines, <span class="hl-purple">KEBS</span>, and <span class="hl-purple">County Governments</span>.</p>
+                <ul>
+                  <li><strong>Key Requirement 1:</strong> Buildings with <strong>more than 4 floors</strong> MUST have lifts.</li>
+                  <li><strong>Key Requirement 2:</strong> Buildings above <strong><span class="hl-amber">18m</span> height</strong> require firefighting lifts.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Primary Functional Requirements</h4>
+                <ul>
+                  <li><strong>Safety:</strong> Paramount. Lifts must not be used in a fire (except specific firefighting lifts).</li>
+                  <li><strong>Reliability & Maintenance:</strong> A lengthy shutdown is expensive and disruptive.</li>
+                  <li><strong>Quiet and smooth operation:</strong> Traction lifts offer a gentler, faster ride than hydraulic lifts.</li>
+                  <li><strong>Speed:</strong> Hydraulic lifts max out around <span class="hl-amber">1 m</span>/s. Traction lifts are typically 1.<span class="hl-amber">6 m</span>/s but can reach <span class="hl-amber">6 m</span>/s.</li>
+                  <li><strong>Coordination and Tolerances:</strong> The lift shaft must be plumb. Critical dimensions include pit depth and headroom.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-1" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-1" style="font-weight: 600; cursor: pointer;">Mark Day 1 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-2">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-arrow-up-down-fill"></i></div><h3>Day 2: Lifts (Classifications & Types)</h3></div>
+
+              <div class="concept-point">
+                <h4>1. Means of Raising/Lowering</h4>
+                <ul>
+                  <li><strong>Traction Elevators:</strong> Car and counterweight attached to opposite ends of hoist ropes passing over a driving machine. Run on load-bearing rails. Used in mid/high-rise buildings (5+ floors).</li>
+                  <li><strong>Hydraulic Elevators:</strong> Raised by forcing pressurized oil through a valve into a steel cylinder. The piston bears the weight (no load-bearing rails needed). Used in low-rise (2-5 floors). Uses power only on ascent; gravity descends. Oil can be recycled.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Classification Based on Use</h4>
+                <ul>
+                  <li><strong>Platform lifts:</strong> Low-rise, move slowly, often for disabled access.</li>
+                  <li><strong>Passenger lifts:</strong> Carry people, strict safety standards.</li>
+                  <li><strong>Service lifts:</strong> Carry goods, may not meet passenger safety standards.</li>
+                  <li><strong>Dumb waiters:</strong> Small lifts used in kitchens/restaurants for food.</li>
+                  <li><strong>Trolley lifts:</strong> Transport large goods on roll cages.</li>
+                  <li><strong>Stair lifts:</strong> Motorised seat on stairs (not for wheelchairs).</li>
+                  <li><strong>Evacuation lift:</strong> Used as part of a management plan during a fire.</li>
+                  <li><strong>Firefighting lift:</strong> Additional protection and direct control for fire services. Required if floor is ><span class="hl-amber">18m</span> above or ><span class="hl-amber">10m</span> below access level.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-2" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-2" style="font-weight: 600; cursor: pointer;">Mark Day 2 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-3">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-settings-4-fill"></i></div><h3>Day 3: Lift Planning & Control</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. General Planning</h4>
+                <p>Lifts should be located centrally to minimize horizontal travel. In tall buildings (>15 storeys), high-speed express lifts bypass lower floors.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Lift Control Systems</h4>
+                <ul>
+                  <li><strong>Single Automatic:</strong> Called by one person/group. "In use" light stays on until they leave. Good for nursing homes/small flats.</li>
+                  <li><strong>Down Collective:</strong> Stores calls. As it descends, it answers in floor sequence. Most suited for flats/small hotels (traffic between lobby and specific floors).</li>
+                  <li><strong>Full/Directional Collective:</strong> Two directional buttons. Responds to calls in floor order first in one direction, then the other. Best for offices and department stores.</li>
+                  <li><strong>Two or More Cars:</strong> Central processor coordinates. One car waits at lobby, the other at mid-point.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Lift Safety Features</h4>
+                <ul>
+                  <li><strong>Buffers:</strong> Located at the shaft base. Oil loaded for >1.<span class="hl-amber">5m</span>/s speeds, otherwise spring loaded.</li>
+                  <li><strong>Overspeed governor:</strong> Pulley system that responds to centrifugal force. Over-speeding switches off power and actuates the safety braking gear.</li>
+                  <li><strong>Safety gear:</strong> Hardened steel wedges that slow/stop the car by frictional contact with the guide rail.</li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-3" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-3" style="font-weight: 600; cursor: pointer;">Mark Day 3 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-4">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-stairs-fill"></i></div><h3>Day 4: Escalators</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Escalator Basics</h4>
+                <p>Moving stairs arranged in pairs. Max capacity depends on step width (600, 800, <span class="hl-amber">1000mm</span>) and speed (0.5 to 0.<span class="hl-amber">65 m</span>/s). They can transport up to 12,000 persons/hour. The motor runs continuously.</p>
+                <p>Components include: Landing platforms, Truss, Tracks (Step wheel track & trailer-wheel track), Steps, and Handrail.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Types of Escalators</h4>
+                <ul>
+                  <li><strong>Parallel:</strong> Side-by-side. Transports more people/unit time than a straight escalator and carries more weight.</li>
+                  <li><strong>Stairway:</strong> Built into a staircase (inclined moving stairs). Good for limited space.</li>
+                  <li><strong>Belt-Type:</strong> Most common. Rectangular steps with slightly curved outer edges.</li>
+                  <li><strong>Curved:</strong> Eye-catching, efficient use of space (radius allows longer arc). Expensive and requires more maintenance.</li>
+                  <li><strong>Step Type:</strong> Stepped conveyors. Usually descending, strictly controlled direction.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Pros & Cons</h4>
+                <p><strong>Pros:</strong> High capacity, continuous movement, space-saving vs traditional stairs.</p>
+                <p><strong>Cons:</strong> High initial/maintenance costs, energy consumption, safety risks (slips/entrapment), and limited capacity during extreme peak periods.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-4" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-4" style="font-weight: 600; cursor: pointer;">Mark Day 4 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-5">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-flight-takeoff-fill"></i></div><h3>Day 5: Travelators</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. What is a Travelator?</h4>
+                <p>Also known as autowalks, passenger conveyors, or moving pavements. They provide horizontal conveyance for distances up to <span class="hl-amber">300m</span>. Slight inclines up to 12° are common (18° max, but not for wheeled transport).</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. Types</h4>
+                <ul>
+                  <li><strong>Horizontal:</strong> Airports, malls.</li>
+                  <li><strong>Inclined:</strong> Moving between elevation changes.</li>
+                  <li><strong>Dual-Directional:</strong> Two conveyors moving in opposite directions.</li>
+                  <li><strong>Multi-Speed & Circular:</strong> Variable speeds or spiral loops.</li>
+                  <li><strong>Outdoor:</strong> Weatherproofed for rain/snow.</li>
+                  <li><strong>Speed walks:</strong> Constant speed, faster than walking.</li>
+                </ul>
+              </div>
+
+              <div class="concept-point">
+                <h4>3. Features & Challenges</h4>
+                <p><strong>Features:</strong> Moving surface (metal slats or rubber), Handrails, Safety Sensors, Emergency Stop, Anti-Slip surface.</p>
+                <p><strong>Disadvantages:</strong> Massive space requirements, high energy consumption, reliability issues (breakdowns with heavy use), and limited functionality (they only move horizontally or slightly inclined).</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-5" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-5" style="font-weight: 600; cursor: pointer;">Mark Day 5 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-panel" id="day-panel-6">
+            <div class="concept-card">
+              <div class="card-header-icon"><div class="card-icon"><i class="ri-tools-fill"></i></div><h3>Day 6: Hoists & Installation Process</h3></div>
+              
+              <div class="concept-point">
+                <h4>1. Hoists</h4>
+                <p>Mechanical devices for lifting heavy loads vertically. Parts include: Power Source (motor/hydraulic), Drum/Pulley (wraps the chain), Lifting mechanism (chain/wire rope), and Control System.</p>
+                <p><strong>Merits:</strong> Efficiency, safety, versatility. <strong>Demerits:</strong> High initial cost, space requirements, complexity.</p>
+              </div>
+
+              <div class="concept-point">
+                <h4>2. 8-Step Installation Process for Lifts/Escalators</h4>
+                <ol>
+                  <li><strong>Site Survey:</strong> Measure shaft space, check power, study traffic.</li>
+                  <li><strong>Shaft Construction:</strong> Must have correct pit depth and overhead space. Done <em>during</em> construction.</li>
+                  <li><strong>Electrical Planning:</strong> 3-phase power, backup generators, surge protection.</li>
+                  <li><strong>Delivery:</strong> Motors, rails, cabins arrive.</li>
+                  <li><strong>Mechanical Installation:</strong> Rails fixed, motor installed, cabin fitted, doors installed.</li>
+                  <li><strong>Electrical Install:</strong> Control boards programmed, buttons tested (Lift becomes "smart").</li>
+                  <li><strong>Testing:</strong> Tested under full load, fire mode, and brake failure.</li>
+                  <li><strong>Handover:</strong> Certified for use, maintenance contract begins.</li>
+                </ol>
+                <p><em>Stop usage if:</em> Jerky movement, strange noise, burning smell, or system errors occur.</p>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                <input type="checkbox" id="complete-day-checkbox-6" style="transform: scale(1.3); cursor: pointer;">
+                <label for="complete-day-checkbox-6" style="font-weight: 600; cursor: pointer;">Mark Day 6 Revision as Complete!</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <aside class="revision-suite">
+          <!-- Flashcards -->
+          <div class="suite-card" id="flashcard-widget-card">
+            <h3><i class="ri-article-line"></i> Revision Flashcards</h3>
+            <div class="flashcard-arena" id="revision-flashcard-arena">
+              <div class="flashcard-inner">
+                <div class="flashcard-front">
+                  <span class="flashcard-card-title" id="flashcard-card-title-text">Tap to Reveal</span>
+                  <p class="flashcard-text" id="flashcard-front-content">Flashcard Front</p>
+                </div>
+                <div class="flashcard-back">
+                  <span class="flashcard-card-title">Concept Definition</span>
+                  <p class="flashcard-text" id="flashcard-back-content" style="font-size: 0.85rem; font-weight: 400;">Flashcard Back</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-space" style="margin-bottom: 1rem;">
+              <span id="flashcard-position-indicator" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">1 / 4</span>
+              <button id="flashcard-shuffle-btn" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                <i class="ri-shuffle-line"></i> Shuffle
+              </button>
+            </div>
+            <div class="flashcard-controls">
+              <button class="btn" id="flashcard-prev-btn"><i class="ri-arrow-left-s-line"></i> Prev</button>
+              <button class="btn btn-accent" id="flashcard-next-btn">Next <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+
+          <!-- Quiz -->
+          <div class="suite-card" id="quiz-widget-card">
+            <h3 id="quiz-day-title"><i class="ri-questionnaire-line"></i> Day 1 Revision Quiz</h3>
+            <div class="quiz-container" id="quiz-body-area"></div>
+          </div>
+          
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="nav.js"></script>
+  <script src="topic6.js"></script>
+</body>
+</html>
