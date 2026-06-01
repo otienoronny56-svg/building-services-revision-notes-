@@ -382,5 +382,45 @@
   </div>
   <script src="nav.js"></script>
   <script src="topic6.js"></script>
+
+  <!-- Floating Copilot Assistant -->
+  <div id="copilot-widget" class="copilot-closed">
+     <!-- Trigger Button -->
+     <button id="copilot-trigger" aria-label="Open Revision Copilot">
+        <i class="ri-chat-voice-line"></i>
+        <span>Ask Notes AI</span>
+     </button>
+     
+     <!-- Chat Panel -->
+     <div id="copilot-panel">
+        <div class="copilot-header">
+           <div class="copilot-header-info">
+              <i class="ri-robot-line"></i>
+              <div>
+                 <h4 style="margin: 0; color: #fff;">Revision Copilot</h4>
+                 <span style="font-size: 0.7rem; color: #94a3b8;">Notes Q&A Assistant</span>
+              </div>
+           </div>
+           <button id="copilot-close-btn" aria-label="Close panel"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="copilot-chat-area" id="copilot-chat-area">
+           <div class="chat-bubble assistant-bubble">
+              👋 Hey! I'm your Building Services Revision Copilot. Ask me any question from our lecturer's notes, and I'll extract the exact answer!
+           </div>
+           <div class="chat-suggestions">
+              <button class="chat-suggest-btn" onclick="askCopilot('What is the difference between plumbing and drainage?')">Plumbing vs Drainage</button>
+              <button class="chat-suggest-btn" onclick="askCopilot('What are the classes of fire?')">Classes of Fire</button>
+              <button class="chat-suggest-btn" onclick="askCopilot('What causes water hardness?')">Water Hardness & Softening</button>
+              <button class="chat-suggest-btn" onclick="askCopilot('What is the gradient of drains?')">Gradient of Drains</button>
+           </div>
+        </div>
+        <div class="copilot-input-area">
+           <input type="text" id="copilot-input" placeholder="Type a revision question...">
+           <button id="copilot-send-btn"><i class="ri-send-plane-2-fill"></i></button>
+        </div>
+     </div>
+  </div>
+
+  <script src="copilot.js"></script>
 </body>
 </html>
